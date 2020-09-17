@@ -1611,23 +1611,25 @@ screen and (-ms-high-contrast: none) {
     vertical-align: 3%;
 }
 
-.form-2 .map-responsive {
+
+/* .form-2 .map-responsive {
     position: relative;
     overflow: hidden;
     height: 0;
     margin-bottom: 4rem;
-    padding-bottom: 70%;
+    padding-bottom: 10%;
     border-radius: 0.25rem;
-}
+} */
 
-.form-2 .map-responsive iframe {
+
+/* .form-2 .map-responsive iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 450px;
     border: none;
-}
+} */
 
 
 /**********************/

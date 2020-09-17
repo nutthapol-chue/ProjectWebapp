@@ -14,36 +14,25 @@
                 <div class="col-lg-4">
                     <h3>ล็อกอิน</h3>
                     <hr>
-                    <h5>Core feature</h5>
-                    <p>The emailing module basically will speed up your email marketing operations while offering more subscriber control.</p>
-                    <p>Do you need to build lists for your email campaigns? It just got easier with Evolo.</p>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="media">
-                            <i class="fas fa-check"></i>
-                            <div class="media-body">List building framework</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-check"></i>
-                            <div class="media-body">Easy database browsing</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-check"></i>
-                            <div class="media-body">User administration</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-check"></i>
-                            <div class="media-body">Automate user signup</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-check"></i>
-                            <div class="media-body">Quick formatting tools</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-check"></i>
-                            <div class="media-body">Fast email checking</div>
-                        </li>
-                    </ul>
-                    <a class="btn-solid-reg mfp-close page-scroll">ยืนยัน</a> <a class="btn-outline-reg as-button popup-with-move-anim" href="#register">สมัครสมาชิก</a>
+                    <form id="loginForm" data-toggle="validator" data-focus="false">
+
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">อีเมล</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control-input" id="cpass" required>
+                            <label class="label-control" for="cpass">รหัสผ่าน</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+
+                        <a class="btn-solid-reg mfp-close page-scroll">ยืนยัน</a> <a class="btn-outline-reg as-button popup-with-move-anim" href="#register">สมัครสมาชิก</a>
+                    </form>
                 </div>
                 <!-- end of col -->
             </div>
@@ -58,8 +47,7 @@
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-7">
-                    <h3>สมัครสมาชิก</h3>
-                    <hr>
+
                     <div class="image-container">
                         <img class="img-fluid" src="/assets/images/logo.png" alt="alternative">
                     </div>
@@ -67,8 +55,8 @@
                 </div>
                 <!-- end of col -->
                 <div class="col-lg-5">
-
-                    <h5>สมัครสมาชิก</h5>
+                    <h3>สมัครสมาชิก</h3>
+                    <hr>
                     <form id="registerForm" data-toggle="validator" data-focus="false">
                         <div class="form-group">
                             <input type="text" class="form-control-input" id="cname" data-error="กรุณากรอก ชื่อ - นามสกุล" required>
@@ -191,8 +179,8 @@
     <!-- Magnific Popup for lightboxes -->
     <script src="/assets/js/validator.js"></script>
     <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="/assets/fullcalendar/main.min.js"></script>
-    <script src="/assets/fullcalendar/locales-all.min.js"></script>
+    <script src="/assets/fullcalendar/main.js"></script>
+    <script src="/assets/fullcalendar/locales-all.js"></script>
     <!-- calendar -->
     <script src="/assets/js/scripts.js"></script>
     <!-- Custom scripts -->

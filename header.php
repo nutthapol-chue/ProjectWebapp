@@ -33,7 +33,7 @@
     <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
     <link href="/assets/css/swiper.css" rel="stylesheet">
     <link href="/assets/css/magnific-popup.css" rel="stylesheet">
-    <link href="/assets/fullcalendar/main.min.css" rel="stylesheet">
+    <link href="/assets/fullcalendar/main.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
 
 
