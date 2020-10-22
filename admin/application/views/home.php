@@ -1,279 +1,387 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<!-- Header -->
-<header id="header" class="header">
-	<div class="header-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="text-container">
-						<h1>ห้างหุ้นส่วนจำกัด <span class="turquoise"><br> สรวิชญ์ พริ้นติ้ง</span> </h1>
-						<p class="p-large">รับพิมพ์ภาพและติดตั้ง ต่างๆ เป็นธุรกิจด้านการออกแบบ ซึ่งจะมีบริการทางด้านการจัดทำสติ๊กเกอร์ แผ่นพับ นามบัตร ตรายาง ซองเอกสารและกล่องเอกสารทุกประเภท</p>
-						<a class="btn-solid-lg page-scroll" href="#contact">ติดต่อ</a>
-					</div>
-					<!-- end of text-container -->
+
+<div class="page-wrapper">
+	<!-- ============================================================== -->
+	<!-- Bread crumb and right sidebar toggle -->
+	<!-- ============================================================== -->
+	<div class="page-breadcrumb">
+		<div class="row align-items-center">
+			<div class="col-md-6 col-8 align-self-center">
+				<h3 class="page-title mb-0 p-0">Dashboard</h3>
+				<div class="d-flex align-items-center">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+						</ol>
+					</nav>
 				</div>
-				<!-- end of col -->
-				<div class="col-lg-6">
-					<div class="image-container">
-						<img class="img-fluid" src="/assets/images/header-teamwork.svg" alt="alternative">
-					</div>
-					<!-- end of image-container -->
-				</div>
-				<!-- end of col -->
 			</div>
-			<!-- end of row -->
+			<div class="col-md-6 col-4 align-self-center">
+				<div class="text-right upgrade-btn">
+					<a href="https://www.wrappixel.com/templates/materialpro/" class="btn btn-danger d-none d-md-inline-block text-white" target="_blank">Upgrade to
+						Pro</a>
+				</div>
+			</div>
 		</div>
-		<!-- end of container -->
 	</div>
-	<!-- end of header-content -->
-</header>
-<!-- end of header -->
-<!-- end of header -->
-
-
-<!-- Customers -->
-<div class="slider-1">
-	<div class="container">
+	<!-- ============================================================== -->
+	<!-- End Bread crumb and right sidebar toggle -->
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- Container fluid  -->
+	<!-- ============================================================== -->
+	<div class="container-fluid">
+		<!-- ============================================================== -->
+		<!-- Sales chart -->
+		<!-- ============================================================== -->
 		<div class="row">
-			<div class="col-lg-12">
-				<h3>แกลเลอรี่สินค้า</h3>
-
-				<!-- Image Slider -->
-
-				<div class="swiper-container image-slider">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/1.jpg" alt="alternative">
+			<!-- Column -->
+			<div class="col-lg-8 col-md-7">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-12">
+								<div class="d-flex flex-wrap align-items-center">
+									<div>
+										<h3 class="card-title">Sales Overview</h3>
+										<h6 class="card-subtitle">Ample Admin Vs Pixel Admin</h6>
+									</div>
+									<div class="ml-lg-auto mx-sm-auto mx-lg-0">
+										<ul class="list-inline d-flex">
+											<li class="mr-4">
+												<h6 class="text-success"><i class="fa fa-circle font-10 m-r-10 "></i>Ample</h6>
+											</li>
+											<li>
+												<h6 class="text-info"><i class="fa fa-circle font-10 m-r-10"></i>Pixel</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/2.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/3.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/4.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/5.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/6.jpg" alt="alternative">
+							<div class="col-12">
+								<div class="amp-pxl" style="height: 360px;">
+									<div class="chartist-tooltip"></div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<!-- end of swiper-wrapper -->
 				</div>
-				<!-- end of swiper container -->
-
-				<!-- end of slider-container -->
-				<!-- end of image slider -->
-
 			</div>
-			<!-- end of col -->
-		</div>
-		<!-- end of row -->
-	</div>
-	<!-- end of container -->
-</div>
-<!-- end of slider-1 -->
-<!-- end of customers -->
-
-
-<!-- Services -->
-<div id="calendar">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>ตารางงาน</h2>
-			</div>
-		</div>
-		<div id="calendar_table">
-		</div>
-	</div>
-</div>
-<!-- end of cards-1 -->
-<!-- end of services -->
-
-
-<!-- end of details lightboxes -->
-
-
-
-<!-- Request -->
-<div id="request" class="form-1">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="text-container">
-					<h2>นัดหมาย</h2>
-					<img src="/assets/images/clock.png" style="width: 15rem;" alt="" srcset="">
-				</div>
-				<!-- end of text-container -->
-			</div>
-			<!-- end of col -->
-			<div class="col-lg-6">
-
-				<!-- Request Form -->
-				<div class="form-container">
-					<form id="requestForm" data-toggle="validator" data-focus="false">
-						<div class="form-group">
-							<input type="text" class="form-control-input" id="rname" name="rname" required>
-							<label class="label-control" for="rname">ชื่อ - นามสกุล</label>
-							<div class="help-block with-errors"></div>
+			<div class="col-lg-4 col-md-5">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Our Visitors </h3>
+						<h6 class="card-subtitle">Different Devices Used to Visit</h6>
+						<div id="visitor" style="height: 290px; width: 100%; max-height: 290px; position: relative;" class="c3">
+							<div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none;">
+							</div>
 						</div>
-						<div class="form-group">
-							<input type="email" class="form-control-input" id="remail" name="remail" required>
-							<label class="label-control" for="remail">อีเมล</label>
-							<div class="help-block with-errors"></div>
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control-input" id="rphone" name="rphone" required>
-							<label class="label-control" for="rphone">เบอร์โทร</label>
-							<div class="help-block with-errors"></div>
-						</div>
-						<div class="form-group">
-							<select class="form-control-select" id="rselect" required>
-								<option class="select-option" value="" disabled selected>ช่วงเวลา</option>
-								<option class="select-option" value="Personal Loan"> -- </option>
-							</select>
-							<div class="help-block with-errors"></div>
-						</div>
-
-						<div class="form-group">
-							<button type="submit" class="form-control-submit-button">ส่งยืนยัน</button>
-						</div>
-						<div class="form-message">
-							<div id="rmsgSubmit" class="h3 text-center hidden"></div>
-						</div>
-					</form>
-				</div>
-				<!-- end of form-container -->
-				<!-- end of request form -->
-
-			</div>
-			<!-- end of col -->
-		</div>
-		<!-- end of row -->
-	</div>
-	<!-- end of container -->
-</div>
-<!-- end of form-1 -->
-<!-- end of request -->
-
-<!-- About -->
-<div id="about" class="basic-4">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>เกี่ยวกับ</h2>
-				<p class="p-heading p-large">ทำการจดทำเบียนสำนักงานในวันที่ วันที่ 9 กุมภาพันธฺ พ.ศ.2558</p>
-			</div>
-			<!-- end of col -->
-		</div>
-		<!-- end of row -->
-		<div class="row">
-			<div class="col-lg-12">
-
-				<!-- Team Member -->
-				<div class="team-member">
-					<div class="image-wrapper">
-						<img class="img-fluid" src="/assets/images/porn.jpg" alt="alternative">
 					</div>
-					<!-- end of image-wrapper -->
-					<p class="p-large"><strong>ชุลีพร งบกระโทก</strong></p>
-					<!-- <p class="job-title">Business Developer</p> -->
-					<span class="social-icons">
-						<span class="fa-stack">
-							<a target="_back" href="https://facebook.com/profile.php?id=100014675749478">
-								<i class="fas fa-circle fa-stack-2x facebook"></i>
-								<i class="fab fa-facebook-f fa-stack-1x"></i>
-							</a>
-						</span>
-					</span>
-					<!-- end of social-icons -->
+					<div>
+						<hr class="m-t-0 m-b-0">
+					</div>
+					<div class="card-body text-center ">
+						<ul class="list-inline d-flex justify-content-center align-items-center mb-0">
+							<li class="mr-4">
+								<h6 class="text-info"><i class="fa fa-circle font-10 mr-2 "></i>Mobile</h6>
+							</li>
+							<li class="mr-4">
+								<h6 class=" text-primary"><i class="fa fa-circle font-10 mr-2"></i>Desktop</h6>
+							</li>
+							<li class="mr-4">
+								<h6 class=" text-success"><i class="fa fa-circle font-10 mr-2"></i>Tablet</h6>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<!-- end of team-member -->
-				<!-- end of team member -->
-
-
 			</div>
-			<!-- end of col -->
 		</div>
-		<!-- end of row -->
-	</div>
-	<!-- end of container -->
-</div>
-<!-- end of basic-4 -->
-<!-- end of about -->
-
-
-<!-- Contact -->
-<div id="contact" class="form-2">
-	<div class="container">
+		<!-- ============================================================== -->
+		<!-- Sales chart -->
+		<!-- ============================================================== -->
 		<div class="row">
-			<div class="col-lg-12">
-				<h2>ติดต่อ</h2>
-				<ul class="list-unstyled li-space-lg">
-					<li class="address">สามารถส่งข้อมูลการติดต่อกับเราได้ที่นี้</li>
-					<li><i class="fas fa-map-marker-alt"></i>67/109 หมู่ที่ 1 ตำบลบางกร่าง อำเภอเมืองนนทบุรี จ.นนทบุรี</li>
-					<li><i class="fas fa-phone"></i><a class="turquoise" href="tel:0935585554">093-558-5554</a></li>
-					<!-- <li><i class="fas fa-envelope"></i><a class="turquoise" href="mailto:office@evolo.com">office@evolo.com</a></li> -->
-				</ul>
+			<!-- Column -->
+			<div class="col-lg-4 col-xlg-3 col-md-5">
+				<!-- Column -->
+				<div class="card">
+					<img class="card-img-top" src="/admin/assets/images/background/profile-bg.jpg" alt="Card image cap">
+					<div class="card-body little-profile text-center">
+						<div class="pro-img"><img src="/admin/assets/images/users/4.jpg" alt="user"></div>
+						<h3 class="mb-0">Angela Dominic</h3>
+						<p>Web Designer &amp; Developer</p>
+						<a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded">Follow</a>
+						<div class="row text-center m-t-20">
+							<div class="col-lg-4 col-md-4 m-t-20">
+								<h3 class="m-b-0 font-light">1099</h3><small>Articles</small>
+							</div>
+							<div class="col-lg-4 col-md-4 m-t-20">
+								<h3 class="m-b-0 font-light">23,469</h3><small>Followers</small>
+							</div>
+							<div class="col-lg-4 col-md-4 m-t-20">
+								<h3 class="m-b-0 font-light">6035</h3><small>Following</small>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Column -->
+				<div class="card">
+					<div class="card-body bg-info">
+						<h4 class="text-white card-title">My Contacts</h4>
+						<h6 class="card-subtitle text-white m-b-0 op-5">Checkout my contacts here</h6>
+					</div>
+					<div class="card-body">
+						<div class="message-box contact-box">
+							<h2 class="add-ct-btn"><button type="button" class="btn btn-circle btn-lg btn-success waves-effect waves-dark">+</button>
+							</h2>
+							<div class="message-widget contact-widget">
+								<!-- Message -->
+								<a href="#" class="d-flex align-items-center">
+									<div class="user-img mb-0"> <img src="/admin/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+									<div class="mail-contnet">
+										<h5 class="mb-0">Pavan kumar</h5> <span class="mail-desc">info@wrappixel.com</span>
+									</div>
+								</a>
+								<!-- Message -->
+								<a href="#" class="d-flex align-items-center">
+									<div class="user-img mb-0"> <img src="/admin/assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+									<div class="mail-contnet">
+										<h5 class="mb-0">Sonu Nigam</h5> <span class="mail-desc">pamela1987@gmail.com</span>
+									</div>
+								</a>
+								<!-- Message -->
+								<a href="#" class="d-flex align-items-center">
+									<div class="user-img mb-0"> <span class="round">A</span> <span class="profile-status away pull-right"></span> </div>
+									<div class="mail-contnet">
+										<h5 class="mb-0">Arijit Sinh</h5> <span class="mail-desc">cruise1298.fiplip@gmail.com</span>
+									</div>
+								</a>
+								<!-- Message -->
+								<a href="#" class="d-flex align-items-center">
+									<div class="user-img mb-0"> <img src="/admin/assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+									<div class="mail-contnet">
+										<h5 class="mb-0">Pavan kumar</h5> <span class="mail-desc">kat@gmail.com</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<!-- end of col -->
+			<div class="col-lg-8 col-xlg-9 col-md-7">
+				<div class="card">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs profile-tab" role="tablist">
+						<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Activity</a>
+						</li>
+						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
+						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+						</li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="home" role="tabpanel">
+							<div class="card-body">
+								<div class="profiletimeline border-left-0">
+									<div class="sl-item">
+										<div class="sl-left"> <img src="/admin/assets/images/users/1.jpg" alt="user" class="img-circle"> </div>
+										<div class="sl-right">
+											<div><a href="#" class="link">John Doe</a> <span class="sl-date">5
+													minutes ago</span>
+												<p>assign a new task <a href="#"> Design weblayout</a></p>
+												<div class="row">
+													<div class="col-lg-3 col-md-6 m-b-20"><img src="/admin/assets/images/big/img1.jpg" alt="user" class="img-responsive radius w-100"></div>
+													<div class="col-lg-3 col-md-6 m-b-20"><img src="/admin/assets/images/big/img2.jpg" alt="user" class="img-responsive radius w-100"></div>
+													<div class="col-lg-3 col-md-6 m-b-20"><img src="/admin/assets/images/big/img3.jpg" alt="user" class="img-responsive radius w-100"></div>
+													<div class="col-lg-3 col-md-6 m-b-20"><img src="/admin/assets/images/big/img4.jpg" alt="user" class="img-responsive radius w-100"></div>
+												</div>
+												<div class="like-comm"> <a href="javascript:void(0)" class="link m-r-10">2
+														comment</a> <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart text-danger"></i> 5 Love</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="sl-item">
+										<div class="sl-left"> <img src="/admin/assets/images/users/2.jpg" alt="user" class="img-circle"> </div>
+										<div class="sl-right">
+											<div> <a href="#" class="link">John Doe</a> <span class="sl-date">5
+													minutes ago</span>
+												<div class="m-t-20 row">
+													<div class="col-md-3 col-xs-12"><img src="/admin/assets/images/big/img1.jpg" alt="user" class="img-responsive w-100 radius"></div>
+													<div class="col-md-9 col-xs-12">
+														<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. </p> <a href="#" class="btn btn-success text-white"> Design
+															weblayout</a>
+													</div>
+												</div>
+												<div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart text-danger"></i> 5 Love</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="sl-item">
+										<div class="sl-left"> <img src="/admin/assets/images/users/3.jpg" alt="user" class="img-circle"> </div>
+										<div class="sl-right">
+											<div><a href="#" class="link">John Doe</a> <span class="sl-date">5
+													minutes ago</span>
+												<p class="m-t-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+													Praesent mauris. Fusce nec tellus sed augue semper </p>
+											</div>
+											<div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2
+													comment</a> <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart text-danger"></i>
+													5 Love</a> </div>
+										</div>
+									</div>
+									<hr>
+									<div class="sl-item">
+										<div class="sl-left"> <img src="/admin/assets/images/users/4.jpg" alt="user" class="img-circle"> </div>
+										<div class="sl-right">
+											<div><a href="#" class="link">John Doe</a> <span class="sl-date">5
+													minutes ago</span>
+												<blockquote class="m-t-10">
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+												</blockquote>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--second tab-->
+						<div class="tab-pane" id="profile" role="tabpanel">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-3 col-xs-6 b-r"> <strong>Full Name</strong>
+										<br>
+										<p class="text-muted">Johnathan Deo</p>
+									</div>
+									<div class="col-md-3 col-xs-6 b-r"> <strong>Mobile</strong>
+										<br>
+										<p class="text-muted">(123) 456 7890</p>
+									</div>
+									<div class="col-md-3 col-xs-6 b-r"> <strong>Email</strong>
+										<br>
+										<p class="text-muted">johnathan@admin.com</p>
+									</div>
+									<div class="col-md-3 col-xs-6"> <strong>Location</strong>
+										<br>
+										<p class="text-muted">London</p>
+									</div>
+								</div>
+								<hr>
+								<p class="m-t-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus
+									elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+									it to make a type specimen book. It has survived not only five centuries </p>
+								<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+								<h4 class="font-medium m-t-30">Skill Set</h4>
+								<hr>
+								<h5 class="d-flex m-t-30">Wordpress <span class="ml-auto">80%</span></h5>
+								<div class="progress">
+									<div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%; height:6px;">
+										<span class="sr-only">50% Complete</span> </div>
+								</div>
+								<h5 class="d-flex m-t-30">HTML 5 <span class="ml-auto">90%</span></h5>
+								<div class="progress">
+									<div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%; height:6px;">
+										<span class="sr-only">50% Complete</span> </div>
+								</div>
+								<h5 class="d-flex m-t-30">jQuery <span class="ml-auto">50%</span></h5>
+								<div class="progress">
+									<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%; height:6px;">
+										<span class="sr-only">50% Complete</span> </div>
+								</div>
+								<h5 class="d-flex m-t-30">Photoshop <span class="ml-auto">70%</span></h5>
+								<div class="progress">
+									<div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:6px;">
+										<span class="sr-only">50% Complete</span> </div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="settings" role="tabpanel">
+							<div class="card-body">
+								<form class="form-horizontal form-material">
+									<div class="form-group">
+										<label class="col-md-12">Full Name</label>
+										<div class="col-md-12">
+											<input type="text" placeholder="Johnathan Doe" class="form-control form-control-line pl-0">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="example-email" class="col-md-12">Email</label>
+										<div class="col-md-12">
+											<input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line pl-0" name="example-email" id="example-email">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Password</label>
+										<div class="col-md-12">
+											<input type="password" value="password" class="form-control form-control-line pl-0">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Phone No</label>
+										<div class="col-md-12">
+											<input type="text" placeholder="123 456 7890" class="form-control form-control-line pl-0">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Message</label>
+										<div class="col-md-12">
+											<textarea rows="5" class="form-control form-control-line pl-0"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-12">Select Country</label>
+										<div class="col-sm-12">
+											<select class="form-control form-control-line pl-0">
+												<option>London</option>
+												<option>India</option>
+												<option>Usa</option>
+												<option>Canada</option>
+												<option>Thailand</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12">
+											<button class="btn btn-success text-white">Update Profile</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- end of row -->
-		<div class="row">
-			<div class="col-12">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1937.2019199735564!2d100.47618515806882!3d13.814772247576695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29a4e5ca37cb5%3A0x79d61b20fe036c9d!2zVGhlIFBsZW5vIOC4nuC4o-C4sOC4o-C4suC4oTUt4Lib4Li04LmI4LiZ4LmA4LiB4Lil4LmJ4LiyIFRhbWJvbiBCYW5nIFNpIFRob25nLCBBbXBob2UgQmFuZyBLcnVhaSwgQ2hhbmcgV2F0IE5vbnRoYWJ1cmkgMTExMzA!5e0!3m2!1sen!2sth!4v1600332421943!5m2!1sen!2sth" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		<!-- ============================================================== -->
+		<!-- Table -->
+		<!-- ============================================================== -->
 
-			</div>
-		</div>
-		<!-- end of row -->
+		<!-- ============================================================== -->
+		<!-- Table -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Recent blogss -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- Recent blogss -->
+		<!-- ============================================================== -->
 	</div>
-	<!-- end of container -->
+	<!-- ============================================================== -->
+	<!-- End Container fluid  -->
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- footer -->
+	<!-- ============================================================== -->
+	<footer class="footer"> © 2020 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a>
+	</footer>
+	<!-- ============================================================== -->
+	<!-- End footer -->
+	<!-- ============================================================== -->
 </div>
-<!-- end of form-2 -->
-<!-- end of contact -->
-
-
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var calendarEl = document.getElementById('calendar_table');
-
-		var calendar = new FullCalendar.Calendar(calendarEl, {
-			timeZone: 'GMT+7',
-			locale: 'th',
-			themeSystem: 'standard',
-			headerToolbar: {
-				right: 'prevYear,prev,today,next,nextYear',
-				center: 'title',
-				left: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-
-			},
-			footerToolbar: {
-				center: '',
-				right: 'prev,next'
-			},
-			weekNumbers: true,
-			dayMaxEvents: true, // allow "more" link when too many events
-			events: 'https://fullcalendar.io/demo-events.json'
-		});
-
-		calendar.render();
-	});
-</script>

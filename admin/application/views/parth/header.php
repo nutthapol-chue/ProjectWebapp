@@ -7,113 +7,161 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- SEO Meta Tags -->
-	<meta name="description" content="Create a stylish landing page for your business startup and get leads for the offered services with this HTML landing page template.">
-	<meta name="author" content="Inovatik">
-
-	<!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" />
-	<!-- website name -->
-	<meta property="og:site" content="" />
-	<!-- website link -->
-	<meta property="og:title" content="" />
-	<!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" />
-	<!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" />
-	<!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" />
-	<!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
-
-	<!-- Website Title -->
-	<title>ห้างหุ้นส่วนจำกัด สรวิชญ์ พริ้นติ้ง</title>
-
-	<!-- Styles -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
-	<link href="/assets/css/bootstrap.css" rel="stylesheet">
-	<link href="/assets/fontawesome/css/all.css" rel="stylesheet">
-	<link href="/assets/css/swiper.css" rel="stylesheet">
-	<link href="/assets/css/magnific-popup.css" rel="stylesheet">
-	<link href="/assets/fullcalendar/main.css" rel="stylesheet">
-	<link href="/assets/css/styles.css" rel="stylesheet">
-
-
-	<!-- Favicon  -->
-	<link rel="icon" href="/assets/images/favicon.ico">
-
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, materialpro admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, materialpro admin lite design, materialpro admin lite dashboard bootstrap 4 dashboard template">
+	<meta name="description" content="Material Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+	<meta name="robots" content="noindex,nofollow">
+	<title>Material Pro Lite Template by WrapPixel</title>
+	<link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="/admin/assets/images/favicon.png">
+	<!-- chartist CSS -->
+	<link href="/admin/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+	<link href="/admin/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+	<link href="/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+	<!--This page css - Morris CSS -->
+	<link href="/admin/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="/admin/assets/css/style.min.css" rel="stylesheet">
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
-
-	<!-- Preloader -->
-	<div class="spinner-wrapper">
-		<div class="spinner">
-			<div class="bounce1"></div>
-			<div class="bounce2"></div>
-			<div class="bounce3"></div>
+<body>
+	<!-- ============================================================== -->
+	<!-- Preloader - style you can find in spinners.css -->
+	<!-- ============================================================== -->
+	<div class="preloader">
+		<div class="lds-ripple">
+			<div class="lds-pos"></div>
+			<div class="lds-pos"></div>
 		</div>
 	</div>
-	<!-- end of preloader -->
+	<!-- ============================================================== -->
+	<!-- Main wrapper - style you can find in pages.scss -->
+	<!-- ============================================================== -->
+	<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+		<!-- ============================================================== -->
+		<!-- Topbar header - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<header class="topbar" data-navbarbg="skin6">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+				<div class="navbar-header" data-logobg="skin6">
+					<!-- ============================================================== -->
+					<!-- Logo -->
+					<!-- ============================================================== -->
+					<a class="navbar-brand ml-4" href="index.html">
+						<!-- Logo icon -->
+						<b class="logo-icon">
+							<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+							<!-- Dark Logo icon -->
+							<img src="/admin/assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
 
+						</b>
+						<!--End Logo icon -->
+						<!-- Logo text -->
+						<span class="logo-text">
+							<!-- dark Logo text -->
+							<img src="/admin/assets/images/logo-light-text.png" alt="homepage" class="dark-logo" />
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-		<!-- Text Logo - Use this if you don't have a graphic logo -->
-		<a class="navbar-brand logo-text page-scroll" style="color: rgb(206, 24, 212);" href="index.html">SORAWIT PRINTING</a>
-
-		<!-- Image Logo -->
-		<!-- <a class="navbar-brand logo-image" href="index.html"><img src="/assets/images/logo_2.png" alt="alternative"></a> -->
-
-		<!-- Mobile Menu Toggle Button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-awesome fas fa-bars"></span>
-			<span class="navbar-toggler-awesome fas fa-times"></span>
-		</button>
-		<!-- end of mobile menu toggle button -->
-
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#header">หนัาหลัก <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#calendar">ตารางงาน</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#request">นัดหมาย</a>
-				</li>
-
-				<!-- Dropdown Menu -->
-				<li class="nav-item dropdown">
-					<!-- class  dropdown-toggle -->
-					<a class="nav-link page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">เกี่ยวกับ</a>
-					<!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
-                    </div> -->
-				</li>
-				<!-- end of dropdown menu -->
-
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#contact">ติดต่อ</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link popup-with-move-anim" href="#login">ล็อกอิน</a>
-				</li>
-			</ul>
-			<span class="nav-item social-icons">
-				<span class="fa-stack">
-					<a target="_back" href="https://facebook.com/profile.php?id=100014675749478">
-						<i class="fas fa-circle fa-stack-2x facebook"></i>
-						<i class="fab fa-facebook-f fa-stack-1x"></i>
+						</span>
 					</a>
-				</span>
-			</span>
-		</div>
-	</nav>
-	<!-- end of navbar -->
-	<!-- end of navigation -->
+					<!-- ============================================================== -->
+					<!-- End Logo -->
+					<!-- ============================================================== -->
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<a class="nav-toggler waves-effect waves-light text-white d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+				</div>
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+					<ul class="navbar-nav d-lg-none d-md-block ">
+						<li class="nav-item">
+							<a class="nav-toggler nav-link waves-effect waves-light text-white " href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+						</li>
+					</ul>
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto mt-md-0 ">
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+
+						<li class="nav-item search-box">
+							<a class="nav-link text-muted" href="javascript:void(0)"><i class="ti-search"></i></a>
+							<form class="app-search" style="display: none;">
+								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+						</li>
+					</ul>
+
+					<!-- ============================================================== -->
+					<!-- Right side toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/admin/assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10">Markarn Doe
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- ============================================================== -->
+		<!-- End Topbar header -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<aside class="left-sidebar" data-sidebarbg="skin6">
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+						<!-- User Profile-->
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mr-2 mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+						<li class="sidebar-item">
+							<a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html" aria-expanded="false">
+								<i class="mdi mr-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
+						</li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html" aria-expanded="false"><i class="mdi mr-2 mdi-table"></i><span class="hide-menu">Table</span></a></li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-material.html" aria-expanded="false"><i class="mdi mr-2 mdi-emoticon"></i><span class="hide-menu">Icon</span></a></li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html" aria-expanded="false"><i class="mdi mr-2 mdi-earth"></i><span class="hide-menu">Google Map</span></a></li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-blank.html" aria-expanded="false"><i class="mdi mr-2 mdi-book-open-variant"></i><span class="hide-menu">Blank</span></a>
+						</li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-error-404.html" aria-expanded="false"><i class="mdi mr-2 mdi-help-circle"></i><span class="hide-menu">Error 404</span></a>
+						</li>
+						<li class="text-center p-20 upgrade-btn">
+							<a href="https://www.wrappixel.com/templates/materialpro/" class="btn btn-warning text-white mt-4" target="_blank">Upgrade to
+								Pro</a>
+						</li>
+					</ul>
+
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+			<div class="sidebar-footer">
+				<div class="row">
+					<div class="col-4 link-wrap">
+						<!-- item-->
+						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ti-settings"></i></a>
+					</div>
+					<div class="col-4 link-wrap">
+						<!-- item-->
+						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="mdi mdi-gmail"></i></a>
+					</div>
+					<div class="col-4 link-wrap">
+						<!-- item-->
+						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="mdi mdi-power"></i></a>
+					</div>
+				</div>
+			</div>
+		</aside>
