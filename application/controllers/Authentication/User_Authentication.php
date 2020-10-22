@@ -42,12 +42,10 @@ class User_Authentication extends CI_Controller
 
 				// Store the user profile info into session 
 				$this->session->set_userdata('user_account', $userData);
+				redirect(site_url());
 			} else {
 				$data['userData'] = array();
 			}
-
-			// Facebook logout URL 
-			$data['logoutURL'] = $this->facebook->logout_url();
 		}
 	}
 

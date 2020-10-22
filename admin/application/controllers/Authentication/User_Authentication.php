@@ -41,7 +41,7 @@ class User_Authentication extends CI_Controller
 				$data['userData'] = $userData;
 
 				// Store the user profile info into session 
-				$this->session->set_userdata('user_account', $userData);
+				$this->session->set_userdata('admin_account', $userData);
 			} else {
 				$data['userData'] = array();
 			}

@@ -101,9 +101,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<li class="nav-item">
 					<a class="nav-link page-scroll" href="#contact">ติดต่อ</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link popup-with-move-anim" href="#login">ล็อกอิน</a>
-				</li>
+				<?php if (!empty($this->session->userdata('user_account'))) { ?>
+					<li class="nav-item">
+						<a class="nav-link popup-with-move-anim" href="#login">บัญชี</a>
+					</li>
+				<?php } else { ?>
+					<li class="nav-item">
+						<a class="nav-link popup-with-move-anim" href="#login">ล็อกอิน</a>
+					</li>
+				<?php } ?>
 			</ul>
 			<span class="nav-item social-icons">
 				<span class="fa-stack">

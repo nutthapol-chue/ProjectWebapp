@@ -24,6 +24,9 @@ class Home extends CI_Controller
 	{	
 		parent::__construct();
 		$this->load->library('facebook');
+		if(empty($this->session->userdata('admin_account'))){
+			redirect(site_url('login'));
+		}
 	}
 	public function index()
 	{
