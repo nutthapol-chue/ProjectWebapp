@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Home extends MX_Controller
 {
 
 	/**
@@ -24,16 +24,32 @@ class Home extends CI_Controller
 	{	
 		parent::__construct();
 		$this->load->library('facebook');
-		if(empty($this->session->userdata('admin_account'))){
-			redirect(site_url('login'));
-		}
 	}
 	public function index()
 	{
 		$data['authURL'] =  $this->facebook->login_url();
 
-		$this->load->view('parth/header',$data);
+		if(!empty($_POST['register'])){
+			$data['modal'] = json_encode($this->register());
+		}
+
+		$this->load->view('header',$data);
 		$this->load->view('home',$data);
-		$this->load->view('parth/footer',$data);
+		$this->load->view('footer',$data);
+	}
+	
+	public function register(){
+		if ($_POST) {
+			$userData = $_POST;
+			if ($userData['c_pass'] == $userData['re_c_pass']) {
+				if ($this->user->chechUser_normal($userData)) {
+					return 'สมัครสมาชิคสำเร็จ';
+				}else{
+					return 'มีผู้ใช้อีเมลนี้แล้ว';
+				}
+			} else {
+				return 'รหัสผ่านไม่ตรงกัน';
+			}
+		}
 	}
 }

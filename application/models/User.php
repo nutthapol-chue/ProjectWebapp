@@ -46,4 +46,24 @@ class User extends CI_Model
 		//return user ID
 		return $userID ? $userID : FALSE;
 	}
+	public function chechUser_normal($userData = [])
+	{
+
+		if (!empty($userData)) {
+			$this->db->select($this->primaryKey);
+			$this->db->from($this->tableName);
+			$this->db->where(array('email' => $userData['c_email']));
+			$prevQuery = $this->db->get();
+			$prevCheck = $prevQuery->num_rows();
+
+			if ($prevCheck > 0) {
+				return FALSE;
+			}else{
+				$this->db->insert($this->tableName, $userData);
+				$this->db->insert_id();
+				return TRUE;
+			}
+		}
+		
+	}
 }

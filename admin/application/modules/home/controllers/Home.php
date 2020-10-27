@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Home extends MX_Controller
 {
 
 	/**
@@ -23,14 +23,11 @@ class Home extends CI_Controller
 	public function __construct()
 	{	
 		parent::__construct();
-		$this->load->library('facebook');
 	}
 	public function index()
 	{
-		$data['authURL'] =  $this->facebook->login_url();
-
-		$this->load->view('parth/header',$data);
-		$this->load->view('home',$data);
-		$this->load->view('parth/footer',$data);
+		$this->load->view('header');
+		$this->load->view('home');
+		$this->load->view('footer');
 	}
 }

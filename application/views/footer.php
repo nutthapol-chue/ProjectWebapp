@@ -19,7 +19,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<hr>
 				<form id="loginForm" data-toggle="validator" data-focus="false">
 					<div class="form-group">
-						<a href="<?= $authURL ?>">ss</a>
+						<a href="<?= $authURL ?>"><img src="/assets/images/fb_login.png" width="100%" alt=""></a>
 					</div>
 					<div class="form-group">
 						<input type="email" class="form-control-input" id="cemail" required>
@@ -62,37 +62,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="col-lg-5">
 				<h3>สมัครสมาชิก</h3>
 				<hr>
-				<form id="registerForm" data-toggle="validator" data-focus="false">
+				<form action="" method="POST" id="registerForm" data-toggle="validator" data-focus="false">
 					<div class="form-group">
-						<input type="text" class="form-control-input" id="cname" data-error="กรุณากรอก ชื่อ - นามสกุล" required>
-						<label class="label-control" for="cname">ชื่อ - นามสกุล</label>
+						<input type="text" class="form-control-input" id="c_fname" name="c_fname" data-error="กรุณากรอก ชื่อ" required>
+						<label class="label-control" for="c_fname">ชื่อ</label>
 						<div class="help-block with-errors"></div>
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control-input" id="cemail" required>
-						<label class="label-control" for="cemail">อีเมล</label>
+						<input type="text" class="form-control-input" id="c_lname" name="c_lname" data-error="กรุณากรอก นามสกุล" required>
+						<label class="label-control" for="c_lname">นามสกุล</label>
 						<div class="help-block with-errors"></div>
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control-input" id="cpass" required>
-						<label class="label-control" for="cpass">รหัสผ่าน</label>
+						<input type="email" class="form-control-input" id="c_email" name="c_email" required>
+						<label class="label-control" for="c_email">อีเมล</label>
 						<div class="help-block with-errors"></div>
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control-input" id="re_cpass" required>
-						<label class="label-control" for="cpass">ยืนยันรหัสผ่าน</label>
+						<input type="password" class="form-control-input" id="c_pass" name="c_pass"  required>
+						<label class="label-control" for="c_pass">รหัสผ่าน</label>
 						<div class="help-block with-errors"></div>
 					</div>
-					<div class="form-group checkbox custom-control custom-checkbox">
-						<input type="checkbox" class="custom-control-input" id="cterms" value="Agreed-to-Terms" required>
-						<label for="cterms" class="custom-control-label"></label>I have read and agree with Evolo's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
+					<div class="form-group">
+						<input type="password" class="form-control-input" id="re_c_pass" name="re_c_pass" required>
+						<label class="label-control" for="re_c_pass">ยืนยันรหัสผ่าน</label>
 						<div class="help-block with-errors"></div>
 					</div>
 					<div class="form-message">
 						<div id="cmsgSubmit" class="h3 text-center hidden"></div>
 					</div>
 
-					<a class="btn-solid-reg mfp-close page-scroll" href="#request">ยืนยันการสมัครสมาชิก</a> <a class="btn-outline-reg as-button popup-with-move-anim" href="#login">ล็อกอิน</a>
+					<button type="submit"class="btn-solid-reg" name="register">ยืนยันการสมัครสมาชิก</button> <a class="btn-outline-reg as-button popup-with-move-anim" href="#login">ล็อกอิน</a>
 				</form>
 			</div>
 			<!-- end of col -->

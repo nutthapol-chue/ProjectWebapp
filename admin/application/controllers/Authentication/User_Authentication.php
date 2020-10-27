@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_Authentication extends CI_Controller
+class User_Authentication extends MY_Controller
 {
 	function __construct()
 	{
@@ -42,12 +42,10 @@ class User_Authentication extends CI_Controller
 
 				// Store the user profile info into session 
 				$this->session->set_userdata('admin_account', $userData);
+				redirect(base_url());
 			} else {
-				$data['userData'] = array();
+				redirect(base_url());
 			}
-
-			// Facebook logout URL 
-			$data['logoutURL'] = $this->facebook->logout_url();
 		}
 	}
 
@@ -56,8 +54,8 @@ class User_Authentication extends CI_Controller
 		// Remove local Facebook session 
 		$this->facebook->destroy_session();
 		// Remove user data from session 
-		$this->session->unset_userdata('user_account');
+		$this->session->unset_userdata('admin_account');
 		// Redirect to login page 
-		redirect(site_url());
+		redirect(base_url());
 	}
 }

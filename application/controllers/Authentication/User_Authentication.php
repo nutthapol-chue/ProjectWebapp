@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_Authentication extends CI_Controller
+class User_Authentication extends MX_Controller
 {
 	function __construct()
 	{
@@ -42,11 +42,16 @@ class User_Authentication extends CI_Controller
 
 				// Store the user profile info into session 
 				$this->session->set_userdata('user_account', $userData);
-				redirect(site_url());
+				redirect(base_url(''));
 			} else {
-				$data['userData'] = array();
+				redirect(base_url(''));
 			}
 		}
+	}
+
+	public function normal_login()
+	{
+	
 	}
 
 	public function logout()
@@ -56,6 +61,6 @@ class User_Authentication extends CI_Controller
 		// Remove user data from session 
 		$this->session->unset_userdata('user_account');
 		// Redirect to login page 
-		redirect(site_url());
+		redirect(base_url(''));
 	}
 }

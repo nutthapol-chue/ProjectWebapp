@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
 		<!-- Text Logo - Use this if you don't have a graphic logo -->
-		<a class="navbar-brand logo-text page-scroll" style="color: rgb(206, 24, 212);" href="index.html">SORAWIT PRINTING</a>
+		<a class="navbar-brand logo-text page-scroll" style="color: rgb(206, 24, 212);" href="<?= index_page(); ?>">SORAWIT PRINTING</a>
 
 		<!-- Image Logo -->
 		<!-- <a class="navbar-brand logo-image" href="index.html"><img src="/assets/images/logo_2.png" alt="alternative"></a> -->
@@ -102,8 +102,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<a class="nav-link page-scroll" href="#contact">ติดต่อ</a>
 				</li>
 				<?php if (!empty($this->session->userdata('user_account'))) { ?>
-					<li class="nav-item">
-						<a class="nav-link popup-with-move-anim" href="#login">บัญชี</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle page-scroll active" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">บัญชี</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?= base_url('logout'); ?>">แก้ไขบัญชี</a>
+							<div class="dropdown-items-divide-hr"></div>
+							<a class="dropdown-item" href="<?= base_url('logout'); ?>">ออกจากระบบ</a>
+						</div>
 					</li>
 				<?php } else { ?>
 					<li class="nav-item">

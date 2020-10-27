@@ -9,7 +9,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="col-lg-6">
 					<div class="text-container">
 						<h1>ห้างหุ้นส่วนจำกัด <span class="turquoise"><br> สรวิชญ์ พริ้นติ้ง</span> </h1>
-						<p class="p-large">รับพิมพ์ภาพและติดตั้ง ต่างๆ เป็นธุรกิจด้านการออกแบบ ซึ่งจะมีบริการทางด้านการจัดทำสติ๊กเกอร์ แผ่นพับ นามบัตร ตรายาง ซองเอกสารและกล่องเอกสารทุกประเภท</p>
+						<p class="p-large"><?= $modal; ?></p>
+						<!-- <p class="p-large">รับพิมพ์ภาพและติดตั้ง ต่างๆ เป็นธุรกิจด้านการออกแบบ ซึ่งจะมีบริการทางด้านการจัดทำสติ๊กเกอร์ แผ่นพับ นามบัตร ตรายาง ซองเอกสารและกล่องเอกสารทุกประเภท</p> -->
 						<a class="btn-solid-lg page-scroll" href="#contact">ติดต่อ</a>
 					</div>
 					<!-- end of text-container -->
@@ -31,66 +32,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </header>
 <!-- end of header -->
 <!-- end of header -->
-
-
-<!-- Customers -->
-<div class="slider-1">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h3>แกลเลอรี่สินค้า</h3>
-
-				<!-- Image Slider -->
-
-				<div class="swiper-container image-slider">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/1.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/2.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/3.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/4.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/5.jpg" alt="alternative">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="image-container">
-								<img class="img-responsive" src="/assets/images/product/6.jpg" alt="alternative">
-							</div>
-						</div>
-					</div>
-					<!-- end of swiper-wrapper -->
-				</div>
-				<!-- end of swiper container -->
-
-				<!-- end of slider-container -->
-				<!-- end of image slider -->
-
-			</div>
-			<!-- end of col -->
-		</div>
-		<!-- end of row -->
-	</div>
-	<!-- end of container -->
-</div>
-<!-- end of slider-1 -->
-<!-- end of customers -->
 
 
 <!-- Services -->
