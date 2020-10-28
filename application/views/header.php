@@ -32,7 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<title>ห้างหุ้นส่วนจำกัด สรวิชญ์ พริ้นติ้ง</title>
 
 	<!-- Styles -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/fontawesome/css/all.css" rel="stylesheet">
 	<link href="/assets/css/swiper.css" rel="stylesheet">

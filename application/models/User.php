@@ -5,6 +5,7 @@ class User extends CI_Model
 {
 	function __construct()
 	{
+		parent::__construct(); 
 		$this->tableName = 'users';
 		$this->primaryKey = 'id';
 	}
@@ -46,9 +47,8 @@ class User extends CI_Model
 		//return user ID
 		return $userID ? $userID : FALSE;
 	}
-	public function chechUser_normal($userData = [])
+	public function checkuser_normal($userData = [])
 	{
-
 		if (!empty($userData)) {
 			$this->db->select($this->primaryKey);
 			$this->db->from($this->tableName);
@@ -59,7 +59,17 @@ class User extends CI_Model
 			if ($prevCheck > 0) {
 				return FALSE;
 			}else{
-				$this->db->insert($this->tableName, $userData);
+				$insert_user = [
+					'normal' => 'normal',
+					'oauth_uid' => hexdec(uniqid()),
+					'first_name' => $userData['c_fname'],
+					'last_name' => $userData['c_lname'],
+					'email' => $userData['c_email'],
+					'password' => $userData['c_pass']
+				];
+				
+
+				$this->db->insert($this->tableName,$insert_user);
 				$this->db->insert_id();
 				return TRUE;
 			}

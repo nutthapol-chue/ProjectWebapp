@@ -92,7 +92,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div id="cmsgSubmit" class="h3 text-center hidden"></div>
 					</div>
 
-					<button type="submit"class="btn-solid-reg" name="register">ยืนยันการสมัครสมาชิก</button> <a class="btn-outline-reg as-button popup-with-move-anim" href="#login">ล็อกอิน</a>
+					<button type="submit"class="btn-solid-reg">ยืนยันการสมัครสมาชิก</button> <a class="btn-outline-reg as-button popup-with-move-anim" href="#login">ล็อกอิน</a>
 				</form>
 			</div>
 			<!-- end of col -->

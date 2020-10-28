@@ -21,7 +21,7 @@ class Home extends MX_Controller
 	 */
 
 	public function __construct()
-	{	
+	{
 		parent::__construct();
 		$this->load->library('facebook');
 	}
@@ -29,27 +29,10 @@ class Home extends MX_Controller
 	{
 		$data['authURL'] =  $this->facebook->login_url();
 
-		if(!empty($_POST['register'])){
-			$data['modal'] = json_encode($this->register());
-		}
+		$this->load->view('header', $data);
+		$this->load->view('home', $data);
+		$this->load->view('footer', $data);
+	}
 
-		$this->load->view('header',$data);
-		$this->load->view('home',$data);
-		$this->load->view('footer',$data);
-	}
 	
-	public function register(){
-		if ($_POST) {
-			$userData = $_POST;
-			if ($userData['c_pass'] == $userData['re_c_pass']) {
-				if ($this->user->chechUser_normal($userData)) {
-					return 'สมัครสมาชิคสำเร็จ';
-				}else{
-					return 'มีผู้ใช้อีเมลนี้แล้ว';
-				}
-			} else {
-				return 'รหัสผ่านไม่ตรงกัน';
-			}
-		}
-	}
 }

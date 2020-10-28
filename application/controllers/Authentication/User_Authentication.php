@@ -14,7 +14,7 @@ class User_Authentication extends MX_Controller
 		$this->load->model('user');
 	}
 
-	public function login()
+	public function login_fb()
 	{
 		$userData = array();
 
@@ -49,9 +49,24 @@ class User_Authentication extends MX_Controller
 		}
 	}
 
-	public function normal_login()
+	public function login()
 	{
 	
+	}
+	public function register()
+	{
+		if ($this->input->post()) {
+			$userData = $this->input->post();
+			if ($userData['c_pass'] == $userData['re_c_pass']) {
+				if ($this->user->checkuser_normal($userData)) {
+					return 'สมัครสมาชิคสำเร็จ';
+				} else {
+					return 'มีผู้ใช้อีเมลนี้แล้ว';
+				}
+			} else {
+				return 'รหัสผ่านไม่ตรงกัน';
+			}
+		}
 	}
 
 	public function logout()

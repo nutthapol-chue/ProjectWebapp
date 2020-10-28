@@ -9,8 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="col-lg-6">
 					<div class="text-container">
 						<h1>ห้างหุ้นส่วนจำกัด <span class="turquoise"><br> สรวิชญ์ พริ้นติ้ง</span> </h1>
-						<p class="p-large"><?= $modal; ?></p>
-						<!-- <p class="p-large">รับพิมพ์ภาพและติดตั้ง ต่างๆ เป็นธุรกิจด้านการออกแบบ ซึ่งจะมีบริการทางด้านการจัดทำสติ๊กเกอร์ แผ่นพับ นามบัตร ตรายาง ซองเอกสารและกล่องเอกสารทุกประเภท</p> -->
+						<p class="p-large">รับพิมพ์ภาพและติดตั้ง ต่างๆ เป็นธุรกิจด้านการออกแบบ ซึ่งจะมีบริการทางด้านการจัดทำสติ๊กเกอร์ แผ่นพับ นามบัตร ตรายาง ซองเอกสารและกล่องเอกสารทุกประเภท</p>
 						<a class="btn-solid-lg page-scroll" href="#contact">ติดต่อ</a>
 					</div>
 					<!-- end of text-container -->
