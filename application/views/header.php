@@ -29,7 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta property="og:type" content="article" />
 
 	<!-- Website Title -->
-	<title>ห้างหุ้นส่วนจำกัด สรวิชญ์ พริ้นติ้ง</title>
+	<title><?= !empty($title) ? $title :'ห้างหุ้นส่วนจำกัด สรวิชญ์ พริ้นติ้ง'; ?></title>
 
 	<!-- Styles -->
 	<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">

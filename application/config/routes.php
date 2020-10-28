@@ -53,5 +53,6 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['login'] = 'authentication/user_authentication/login';
+$route['login_fb'] = 'authentication/user_authentication/login_fb';
+$route['register'] = 'authentication/user_authentication/register';
 $route['logout'] = 'authentication/user_authentication/logout';

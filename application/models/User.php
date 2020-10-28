@@ -60,7 +60,7 @@ class User extends CI_Model
 				return FALSE;
 			}else{
 				$insert_user = [
-					'normal' => 'normal',
+					'oauth_provider' => 'normal',
 					'oauth_uid' => hexdec(uniqid()),
 					'first_name' => $userData['c_fname'],
 					'last_name' => $userData['c_lname'],
