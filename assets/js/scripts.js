@@ -209,7 +209,7 @@
         $("input").removeClass('notEmpty'); // resets the field label after submission
     }
 
-    function rformError() {
+    function rformError() { 
         $("#registerForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass();
         });
@@ -225,60 +225,58 @@
     }
 
 
-    /* Contact Form */
-    $("#contactForm").validator().on("submit", function (event) {
+    /* Login Form */
+    $("#login").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
-            cformError();
-            csubmitMSG(false, "กรุณากรอกข้อมูลทุกช่อง !");
+            lformError();
+            lsubmitMSG(false, "กรุณากรอกข้อมูลทุกช่อง !");
         } else {
             // everything looks good!
             event.preventDefault();
-            csubmitForm();
+            lsubmitForm();
         }
     });
 
-    function csubmitForm() {
+    function lsubmitForm() {
         // initiate variables with form content
-        var name = $("#cname").val();
-        var email = $("#cemail").val();
-        var message = $("#cmessage").val();
-        var terms = $("#cterms").val();
+        var email = $("#c_email").val();
+        var pass = $("#c_pass").val();
         $.ajax({
             type: "POST",
-            url: "php/contactform-process.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms,
+            url: js_base_url('login'),
+            data: "email=" + email + "&password=" + pass,
             success: function (text) {
                 if (text == "success") {
-                    cformSuccess();
+                    lformSuccess();
                 } else {
-                    cformError();
-                    csubmitMSG(false, text);
+                    lformError();
+                    lsubmitMSG(false, text);
                 }
             }
         });
     }
 
-    function cformSuccess() {
-        $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
+    function lformSuccess() {
+        $("#login")[0].reset();
+        lsubmitMSG(true, "เข้าสู่ระบบสำเร็จ!");
         $("input").removeClass('notEmpty'); // resets the field label after submission
         $("textarea").removeClass('notEmpty'); // resets the field label after submission
     }
 
-    function cformError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    function lformError() {
+        $("#login").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass();
         });
     }
 
-    function csubmitMSG(valid, msg) {
+    function lsubmitMSG(valid, msg) {
         if (valid) {
             var msgClasses = "h3 text-center tada animated";
         } else {
             var msgClasses = "h3 text-center";
         }
-        $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+        $("#loginSubmit").removeClass().addClass(msgClasses).text(msg);
     }
 
 

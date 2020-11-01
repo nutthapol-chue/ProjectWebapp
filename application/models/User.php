@@ -5,9 +5,8 @@ class User extends CI_Model
 {
 	function __construct()
 	{
-		parent::__construct(); 
+		parent::__construct();
 		$this->tableName = 'users';
-		$this->primaryKey = 'id';
 	}
 
 	/*
@@ -18,7 +17,7 @@ class User extends CI_Model
 	{
 		if (!empty($userData)) {
 			//check whether user data already exists in database with same oauth info
-			$this->db->select($this->primaryKey);
+			$this->db->select('*');
 			$this->db->from($this->tableName);
 			$this->db->where(array('oauth_provider' => $userData['oauth_provider'], 'oauth_uid' => $userData['oauth_uid']));
 			$prevQuery = $this->db->get();
@@ -41,7 +40,15 @@ class User extends CI_Model
 
 				//get user ID
 				$userID = $this->db->insert_id();
+
+				$this->db->from($this->tableName);
+				$this->db->where(array('id' => $userID));
+				$prevQuery = $this->db->get();
+				$prevResult = $prevQuery->row_array();
 			}
+		}
+		if ($userID) {
+			$this->session->set_userdata('user_account', $prevResult);
 		}
 
 		//return user ID
@@ -58,7 +65,7 @@ class User extends CI_Model
 
 			if ($prevCheck > 0) {
 				return FALSE;
-			}else{
+			} else {
 				$insert_user = [
 					'oauth_provider' => 'normal',
 					'oauth_uid' => hexdec(uniqid()),
@@ -67,13 +74,12 @@ class User extends CI_Model
 					'email' => $userData['c_email'],
 					'password' => $userData['c_pass']
 				];
-				
 
-				$this->db->insert($this->tableName,$insert_user);
+
+				$this->db->insert($this->tableName, $insert_user);
 				$this->db->insert_id();
 				return TRUE;
 			}
 		}
-		
 	}
 }

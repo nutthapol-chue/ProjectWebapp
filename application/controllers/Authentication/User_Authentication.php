@@ -41,7 +41,7 @@ class User_Authentication extends MX_Controller
 				$data['userData'] = $userData;
 
 				// Store the user profile info into session 
-				$this->session->set_userdata('user_account', $userData);
+				
 				redirect(base_url(''));
 			} else {
 				redirect(base_url(''));
@@ -51,7 +51,7 @@ class User_Authentication extends MX_Controller
 
 	public function login()
 	{
-	
+		
 	}
 	public function register()
 	{
@@ -59,13 +59,15 @@ class User_Authentication extends MX_Controller
 			$userData = $this->input->post();
 			if ($userData['c_pass'] == $userData['re_c_pass']) {
 				if ($this->user->checkuser_normal($userData)) {
-					return 'success';
+					echo 'success';
 				} else {
-					return 'มีผู้ใช้อีเมลนี้แล้ว';
+					echo 'มีผู้ใช้อีเมลนี้แล้ว';
 				}
 			} else {
-				return 'รหัสผ่านไม่ตรงกัน';
+				echo 'รหัสผ่านไม่ตรงกัน';
 			}
+		}else{
+			echo 'พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง';
 		}
 	}
 

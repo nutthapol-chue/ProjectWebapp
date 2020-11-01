@@ -29,7 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta property="og:type" content="article" />
 
 	<!-- Website Title -->
-	<title><?= !empty($title) ? $title :'ห้างหุ้นส่วนจำกัด สรวิชญ์ พริ้นติ้ง'; ?></title>
+	<title><?= !empty($title) ? $title : 'ห้างหุ้นส่วนจำกัด สรวิชญ์ พริ้นติ้ง'; ?></title>
 
 	<!-- Styles -->
 	<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
@@ -102,6 +102,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<a class="nav-link page-scroll" href="#contact">ติดต่อ</a>
 				</li>
 				<?php if (!empty($this->session->userdata('user_account'))) { ?>
+					<li class="nav-item">
+						<a class="nav-link page-scroll" href="<?= base_url('chat'); ?>">แชทกับผู้ดูแล</a>
+					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle page-scroll active" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">บัญชี</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">

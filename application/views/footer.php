@@ -88,10 +88,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<label class="label-control" for="re_c_pass">ยืนยันรหัสผ่าน</label>
 						<div class="help-block with-errors"></div>
 					</div>
-					<button type="submit"class="btn-solid-reg">ยืนยันการสมัครสมาชิก</button> <a class="btn-outline-reg as-button popup-with-move-anim" href="#login">ล็อกอิน</a>
 					<div class="form-message">
 						<div id="regisSubmit" class="h3 text-center hidden"></div>
 					</div>
+					<button type="submit" class="btn-solid-reg">ยืนยันการสมัครสมาชิก</button> <a class="btn-outline-reg as-button popup-with-move-anim" href="#login">ล็อกอิน</a>
+
 				</form>
 			</div>
 			<!-- end of col -->
