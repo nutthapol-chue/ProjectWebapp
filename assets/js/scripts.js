@@ -5,16 +5,25 @@
 */
 
 
-(function($) {
+(function ($) {
     "use strict";
-
+    var js_base_url = function (url) {
+        //var base_urls = window.location.origin;
+        //var host = window.location.host;
+        //var pathArray = window.location.pathname.split('/');
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        if (url === undefined || url === null)
+            url = '';
+        return baseUrl + '/' + url;
+    }
     /* Preloader */
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         var preloaderFadeOutTime = 500;
 
         function hidePreloader() {
             var preloader = $('.spinner-wrapper');
-            setTimeout(function() {
+            setTimeout(function () {
                 preloader.fadeOut(preloaderFadeOutTime);
             }, 500);
         }
@@ -24,7 +33,7 @@
 
     /* Navbar Scripts */
     // jQuery to collapse the navbar on scroll
-    $(window).on('scroll load', function() {
+    $(window).on('scroll load', function () {
         if ($(".navbar").offset().top > 60) {
             $(".fixed-top").addClass("top-nav-collapse");
         } else {
@@ -33,8 +42,8 @@
     });
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $(function() {
-        $(document).on('click', 'a.page-scroll', function(event) {
+    $(function () {
+        $(document).on('click', 'a.page-scroll', function (event) {
             var $anchor = $(this);
             $('html, body').stop().animate({
                 scrollTop: $($anchor.attr('href')).offset().top
@@ -44,7 +53,7 @@
     });
 
     // closes the responsive menu on menu item click
-    $(".navbar-nav li a").on("click", function(event) {
+    $(".navbar-nav li a").on("click", function (event) {
         if (!$(this).parent().hasClass('dropdown'))
             $(".navbar-collapse").collapse('hide');
     });
@@ -111,7 +120,7 @@
             patterns: {
                 youtube: {
                     index: 'youtube.com/',
-                    id: function(url) {
+                    id: function (url) {
                         var m = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
                         if (!m || !m[1]) return null;
                         return m[1];
@@ -120,7 +129,7 @@
                 },
                 vimeo: {
                     index: 'vimeo.com/',
-                    id: function(url) {
+                    id: function (url) {
                         var m = url.match(/(https?:\/\/)?(www.)?(player.)?vimeo.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/);
                         if (!m || !m[5]) return null;
                         return m[5];
@@ -149,7 +158,7 @@
 
     /* Move Form Fields Label When User Types */
     // for input and textarea fields
-    $("input, textarea").keyup(function() {
+    $("input, textarea").keyup(function () {
         if ($(this).val() != '') {
             $(this).addClass('notEmpty');
         } else {
@@ -158,8 +167,8 @@
     });
 
 
-    /* Request Form */
-    $("#requestForm").validator().on("submit", function(event) {
+    /* Register Form */
+    $("#registerForm").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
             rformError();
@@ -173,17 +182,17 @@
 
     function rsubmitForm() {
         // initiate variables with form content
-        var name = $("#rname").val();
-        var email = $("#remail").val();
-        var phone = $("#rphone").val();
-        var select = $("#rselect").val();
-        var terms = $("#rterms").val();
+        var fname = $("#c_fname").val();
+        var lname = $("#c_lname").val();
+        var email = $("#c_email").val();
+        var c_pass = $("#c_pass").val();
+        var re_c_pass = $("#re_c_pass").val();
 
         $.ajax({
             type: "POST",
-            url: "php/requestform-process.php",
-            data: "name=" + name + "&email=" + email + "&phone=" + phone + "&select=" + select + "&terms=" + terms,
-            success: function(text) {
+            url: js_base_url('register'),
+            data: "c_fname=" + fname + "&c_lname=" + lname + "&c_email=" + email + "&c_pass=" + c_pass + "&re_c_pass=" + re_c_pass,
+            success: function (text) {
                 if (text == "success") {
                     rformSuccess();
                 } else {
@@ -195,13 +204,13 @@
     }
 
     function rformSuccess() {
-        $("#requestForm")[0].reset();
-        rsubmitMSG(true, "Request Submitted!");
+        $("#registerForm")[0].reset();
+        rsubmitMSG(true, "สมัครสมาชิดสำเร็จ!");
         $("input").removeClass('notEmpty'); // resets the field label after submission
     }
 
     function rformError() {
-        $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $("#registerForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass();
         });
     }
@@ -212,12 +221,12 @@
         } else {
             var msgClasses = "h3 text-center";
         }
-        $("#rmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+        $("#regisSubmit").removeClass().addClass(msgClasses).text(msg);
     }
 
 
     /* Contact Form */
-    $("#contactForm").validator().on("submit", function(event) {
+    $("#contactForm").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
             cformError();
@@ -239,7 +248,7 @@
             type: "POST",
             url: "php/contactform-process.php",
             data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms,
-            success: function(text) {
+            success: function (text) {
                 if (text == "success") {
                     cformSuccess();
                 } else {
@@ -258,7 +267,7 @@
     }
 
     function cformError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass();
         });
     }
@@ -274,7 +283,7 @@
 
 
     /* Privacy Form */
-    $("#privacyForm").validator().on("submit", function(event) {
+    $("#privacyForm").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
             pformError();
@@ -297,7 +306,7 @@
             type: "POST",
             url: "php/privacyform-process.php",
             data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms,
-            success: function(text) {
+            success: function (text) {
                 if (text == "success") {
                     pformSuccess();
                 } else {
@@ -315,7 +324,7 @@
     }
 
     function pformError() {
-        $("#privacyForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $("#privacyForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass();
         });
     }
@@ -334,7 +343,7 @@
     // create the back to top button
     $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
     var amountScrolled = 700;
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(window).scrollTop() > amountScrolled) {
             $('a.back-to-top').fadeIn('500');
         } else {
@@ -344,7 +353,7 @@
 
 
     /* Removes Long Focus On Buttons */
-    $(".button, a, button").mouseup(function() {
+    $(".button, a, button").mouseup(function () {
         $(this).blur();
     });
 

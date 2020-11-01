@@ -59,7 +59,7 @@ class User_Authentication extends MX_Controller
 			$userData = $this->input->post();
 			if ($userData['c_pass'] == $userData['re_c_pass']) {
 				if ($this->user->checkuser_normal($userData)) {
-					return 'สมัครสมาชิคสำเร็จ';
+					return 'success';
 				} else {
 					return 'มีผู้ใช้อีเมลนี้แล้ว';
 				}

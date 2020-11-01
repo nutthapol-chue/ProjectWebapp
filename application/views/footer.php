@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="col-lg-5">
 				<h3>สมัครสมาชิก</h3>
 				<hr>
-				<form action="<?= base_url('register'); ?>" method="POST" id="registerForm" data-toggle="validator" data-focus="false">
+				<form method="POST" id="registerForm" data-toggle="validator" data-focus="false">
 					<div class="form-group">
 						<input type="text" class="form-control-input" id="c_fname" name="c_fname" data-error="กรุณากรอก ชื่อ" required>
 						<label class="label-control" for="c_fname">ชื่อ</label>
