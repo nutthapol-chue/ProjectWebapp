@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends MX_Controller
+class Login extends MX_Controller
 {
 
 	/**
@@ -23,16 +23,12 @@ class Home extends MX_Controller
 	public function __construct()
 	{	
 		parent::__construct();
-		
-		// if (empty($this->session->userdata('admin_account'))) {
-		// 	redirect(base_url('login'));
-		// }
-	
+
 	}
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('home');
-		$this->load->view('footer');
+		$this->load->view('login_form');
 	}
+
+	
 }

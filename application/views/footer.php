@@ -22,13 +22,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<a href="<?= $authURL ?>"><img src="/assets/images/fb_login.png" width="100%" alt=""></a>
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control-input" id="cemail" data-error="กรุณากรอก อีเมล" required>
-						<label class="label-control" for="cemail">อีเมล</label>
+						<input type="email" class="form-control-input" id="l_email" name="l_email" data-error="กรุณากรอก อีเมล" required>
+						<label class="label-control" for="l_email">อีเมล</label>
 						<div class="help-block with-errors"></div>
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control-input" id="cpass" data-error="กรุณากรอก รหัสผ่าน" required>
-						<label class="label-control" for="cpass">รหัสผ่าน</label>
+						<input type="password" class="form-control-input" id="l_pass" name="l_pass" data-error="กรุณากรอก รหัสผ่าน" required>
+						<label class="label-control" for="l_pass">รหัสผ่าน</label>
 						<div class="help-block with-errors"></div>
 					</div>
 
@@ -36,7 +36,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div id="loginSubmit" class="h3 text-center hidden"></div>
 					</div>
 
-					<a class="btn-solid-reg mfp-close page-scroll">ยืนยัน</a> <a class="btn-outline-reg as-button popup-with-move-anim" href="#register">สมัครสมาชิก</a>
+					<button type="submit" class="btn-solid-reg">ยืนยัน</button> <a class="btn-outline-reg as-button popup-with-move-anim" href="#register">สมัครสมาชิก</a>
 				</form>
 			</div>
 			<!-- end of col -->

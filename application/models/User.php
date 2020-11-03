@@ -57,7 +57,7 @@ class User extends CI_Model
 	public function checkuser_normal($userData = [])
 	{
 		if (!empty($userData)) {
-			$this->db->select($this->primaryKey);
+			$this->db->select('*');
 			$this->db->from($this->tableName);
 			$this->db->where(array('email' => $userData['c_email']));
 			$prevQuery = $this->db->get();
@@ -74,7 +74,6 @@ class User extends CI_Model
 					'email' => $userData['c_email'],
 					'password' => $userData['c_pass']
 				];
-
 
 				$this->db->insert($this->tableName, $insert_user);
 				$this->db->insert_id();

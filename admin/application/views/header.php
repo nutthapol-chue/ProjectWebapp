@@ -13,10 +13,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, materialpro admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, materialpro admin lite design, materialpro admin lite dashboard bootstrap 4 dashboard template">
 	<meta name="description" content="Material Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
 	<meta name="robots" content="noindex,nofollow">
-	<title>Material Pro Lite Template by WrapPixel</title>
+	<title>Dasboard</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
 	<!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="/admin/assets/images/favicon.png">
 	<!-- chartist CSS -->
 	<link href="/admin/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
 	<link href="/admin/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
@@ -47,31 +46,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<header class="topbar" data-navbarbg="skin6">
 			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
 				<div class="navbar-header" data-logobg="skin6">
-					<!-- ============================================================== -->
-					<!-- Logo -->
-					<!-- ============================================================== -->
-					<a class="navbar-brand ml-4" href="index.html">
-						<!-- Logo icon -->
-						<b class="logo-icon">
-							<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-							<!-- Dark Logo icon -->
-							<img src="/admin/assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
+					<h2 class="navbar-brand ml-4" style="color:#FFF">SORAWIT PRINTING</h2>
 
-						</b>
-						<!--End Logo icon -->
-						<!-- Logo text -->
-						<span class="logo-text">
-							<!-- dark Logo text -->
-							<img src="/admin/assets/images/logo-light-text.png" alt="homepage" class="dark-logo" />
-
-						</span>
-					</a>
-					<!-- ============================================================== -->
-					<!-- End Logo -->
-					<!-- ============================================================== -->
-					<!-- ============================================================== -->
-					<!-- toggle and nav items -->
-					<!-- ============================================================== -->
 					<a class="nav-toggler waves-effect waves-light text-white d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
 				</div>
 				<!-- ============================================================== -->
@@ -91,11 +67,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<!-- Search -->
 						<!-- ============================================================== -->
 
-						<li class="nav-item search-box">
-							<a class="nav-link text-muted" href="javascript:void(0)"><i class="ti-search"></i></a>
-							<form class="app-search" style="display: none;">
-								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-						</li>
 					</ul>
 
 					<!-- ============================================================== -->
@@ -106,7 +77,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<!-- User profile and search -->
 						<!-- ============================================================== -->
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/admin/assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10">Markarn Doe
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nutthapol Chuenbunchom
 							</a>
 						</li>
 					</ul>
@@ -126,22 +97,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<nav class="sidebar-nav">
 					<ul id="sidebarnav">
 						<!-- User Profile-->
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mr-2 mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mr-2 mdi-gauge"></i><span class="hide-menu">แดชบอร์ด</span></a></li>
 						<li class="sidebar-item">
 							<a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html" aria-expanded="false">
-								<i class="mdi mr-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
+								<i class="mdi mr-2 mdi-account-check"></i><span class="hide-menu">โปรไฟล์</span></a>
 						</li>
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html" aria-expanded="false"><i class="mdi mr-2 mdi-table"></i><span class="hide-menu">Table</span></a></li>
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-material.html" aria-expanded="false"><i class="mdi mr-2 mdi-emoticon"></i><span class="hide-menu">Icon</span></a></li>
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html" aria-expanded="false"><i class="mdi mr-2 mdi-earth"></i><span class="hide-menu">Google Map</span></a></li>
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-blank.html" aria-expanded="false"><i class="mdi mr-2 mdi-book-open-variant"></i><span class="hide-menu">Blank</span></a>
-						</li>
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-error-404.html" aria-expanded="false"><i class="mdi mr-2 mdi-help-circle"></i><span class="hide-menu">Error 404</span></a>
-						</li>
-						<li class="text-center p-20 upgrade-btn">
-							<a href="https://www.wrappixel.com/templates/materialpro/" class="btn btn-warning text-white mt-4" target="_blank">Upgrade to
-								Pro</a>
-						</li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html" aria-expanded="false"><i class="mdi mr-2 mdi-table"></i><span class="hide-menu">อนุมัติงาน</span></a></li>
 					</ul>
 
 				</nav>
@@ -150,14 +111,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- End Sidebar scroll-->
 			<div class="sidebar-footer">
 				<div class="row">
-					<div class="col-4 link-wrap">
-						<!-- item-->
-						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ti-settings"></i></a>
-					</div>
-					<div class="col-4 link-wrap">
-						<!-- item-->
-						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="mdi mdi-gmail"></i></a>
-					</div>
 					<div class="col-4 link-wrap">
 						<!-- item-->
 						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="mdi mdi-power"></i></a>

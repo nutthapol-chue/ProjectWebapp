@@ -46,12 +46,32 @@ class User_Authentication extends MX_Controller
 			} else {
 				redirect(base_url(''));
 			}
+		}else{
+			redirect(base_url());
 		}
 	}
 
 	public function login()
 	{
-		
+		if($this->input->post()){
+			$userData = $this->input->post();
+
+			$this->db->select('*');
+			$this->db->from('users');
+			$this->db->where(array('email' => $userData['c_email'],'password' => $userData['c_pass']));
+			$prevQuery = $this->db->get();
+			$prevCheck = $prevQuery->num_rows();
+
+			if($prevCheck > 0){
+				$prevResult = $prevQuery->row_array();
+				$this->session->set_userdata('user_account', $prevResult);
+				echo 'success';
+			}else{
+				echo 'อีเมลหรือรหัสผ่านผิด';
+			}
+		}else{
+			echo 'พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง';
+		}
 	}
 	public function register()
 	{

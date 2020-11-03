@@ -5,8 +5,11 @@ class User extends CI_Model
 {
 	function __construct()
 	{
+		parent::__construct();
 		$this->tableName = 'users';
 		$this->primaryKey = 'id';
+
+	
 	}
 
 	/*
