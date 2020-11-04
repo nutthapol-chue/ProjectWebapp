@@ -19,21 +19,22 @@ class Auth extends MX_Controller
 			$userData = $this->input->post();
 
 			$this->db->select('*');
-			$this->db->from('users');
+			$this->db->from('admin');
 			$this->db->where(array('email' => $userData['a_email'], 'password' => $userData['a_pass']));
 			$prevQuery = $this->db->get();
 			$prevCheck = $prevQuery->num_rows();
 
 			if ($prevCheck > 0) {
 				$prevResult = $prevQuery->row_array();
-				$this->session->set_userdata('user_account', $prevResult);
-				echo 'success';
+				$this->session->set_userdata('admin_account', $prevResult);
+				$json['success'] = 'success';
 			} else {
-				echo 'อีเมลหรือรหัสผ่านผิด';
+				$json['error'] = 'อีเมลหรือรหัสผ่านผิด';
 			}
 		} else {
-			echo 'พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง';
+			$json['error'] = 'พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง';
 		}
+		echo json_encode($json);
 	}
 	public function register()
 	{
@@ -51,5 +52,13 @@ class Auth extends MX_Controller
 		} else {
 			echo 'พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง';
 		}
+	}
+
+	public function logout()
+	{
+		// Remove user data from session 
+		$this->session->unset_userdata('admin_account');
+		// Redirect to login page 
+		redirect(base_url(''));
 	}
 }

@@ -21,14 +21,14 @@ class Login extends MX_Controller
 	 */
 
 	public function __construct()
-	{	
+	{
 		parent::__construct();
-
+		if (!empty($this->session->userdata('admin_account'))) {
+			redirect(base_url('home'));
+		}
 	}
 	public function index()
 	{
 		$this->load->view('login_form');
 	}
-
-	
 }

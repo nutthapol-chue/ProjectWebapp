@@ -21,13 +21,12 @@ class Home extends MX_Controller
 	 */
 
 	public function __construct()
-	{	
+	{
 		parent::__construct();
-		
-		// if (empty($this->session->userdata('admin_account'))) {
-		// 	redirect(base_url('login'));
-		// }
-	
+
+		if (empty($this->session->userdata('admin_account'))) {
+			redirect(base_url('login'));
+		}
 	}
 	public function index()
 	{

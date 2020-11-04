@@ -13,17 +13,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, materialpro admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, materialpro admin lite design, materialpro admin lite dashboard bootstrap 4 dashboard template">
 	<meta name="description" content="Material Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
 	<meta name="robots" content="noindex,nofollow">
-	<title>Dasboard</title>
+	<title>ADMIN - SORAWIT PRINTING</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
 	<!-- Favicon icon -->
 	<!-- chartist CSS -->
-	<link href="/admin/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
-	<link href="/admin/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
-	<link href="/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+	<link href="<?= base_url('assets/plugins/chartist-js/dist/chartist.min.css'); ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/plugins/chartist-js/dist/chartist-init.css'); ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css'); ?>" rel="stylesheet">
 	<!--This page css - Morris CSS -->
-	<link href="/admin/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+	<link href="<?= base_url('assets/plugins/c3-master/c3.min.css'); ?>" rel="stylesheet">
 	<!-- Custom CSS -->
-	<link href="/admin/assets/css/style.min.css" rel="stylesheet">
+	<link href="<?= base_url('assets/css/style.min.css'); ?>" rel="stylesheet">
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<script src="<?= base_url('assets/plugins/jquery/dist/jquery.min.js'); ?>"></script>
+	<!-- Bootstrap tether Core JavaScript -->
+	<script src="<?= base_url('assets/plugins/popper.js/dist/umd/popper.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/plugins/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/js/app-style-switcher.js'); ?>"></script>
+	<!--Wave Effects -->
+	<script src="<?= base_url('assets/js/waves.js'); ?>"></script>
+	<!--Menu sidebar -->
+	<script src="<?= base_url('assets/js/sidebarmenu.js'); ?>"></script>
+	<!-- ============================================================== -->
+	<!-- This page plugins -->
+	<!-- ============================================================== -->
+	<!-- chartist chart -->
+	<script src="<?= base_url('assets/plugins/chartist-js/dist/chartist.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js'); ?>"></script>
+	<!--c3 JavaScript -->
+	<script src="<?= base_url('assets/plugins/d3/d3.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/plugins/c3-master/c3.min.js'); ?>"></script>
+	<!--Custom JavaScript -->
+	<script src="<?= base_url('assets/js/pages/dashboards/dashboard1.js'); ?>"></script>
+	<script src="<?= base_url('assets/js/custom.js'); ?>"></script>
+	<script src="<?= base_url('assets/js/ajex.js'); ?>"></script>
 </head>
 
 <body>
@@ -77,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<!-- User profile and search -->
 						<!-- ============================================================== -->
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nutthapol Chuenbunchom
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $this->session->userdata('admin_account')['first_name'] . ' ' . $this->session->userdata('admin_account')['last_name'] ?>
 							</a>
 						</li>
 					</ul>
@@ -97,7 +121,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<nav class="sidebar-nav">
 					<ul id="sidebarnav">
 						<!-- User Profile-->
-						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mr-2 mdi-gauge"></i><span class="hide-menu">แดชบอร์ด</span></a></li>
+						<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= index_page('ssss'); ?>" aria-expanded="false"><i class="mdi mr-2 mdi-gauge"></i><span class="hide-menu">แดชบอร์ด</span></a></li>
 						<li class="sidebar-item">
 							<a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html" aria-expanded="false">
 								<i class="mdi mr-2 mdi-account-check"></i><span class="hide-menu">โปรไฟล์</span></a>
@@ -113,8 +137,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-4 link-wrap">
 						<!-- item-->
-						<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="mdi mdi-power"></i></a>
+						<a href="<?= base_url('auth/logout'); ?>" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="mdi mdi-power"></i></a>
 					</div>
 				</div>
 			</div>
 		</aside>
+
+		<div class="page-wrapper">
