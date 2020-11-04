@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<footer class="footer"> © 2020 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a>
+<footer class="footer"> © 2020
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->

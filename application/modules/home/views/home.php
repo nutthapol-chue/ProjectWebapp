@@ -71,27 +71,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="form-container">
 					<form id="requestForm" data-toggle="validator" data-focus="false">
 						<div class="form-group">
-							<input type="text" class="form-control-input" id="rname" name="rname" required>
-							<label class="label-control" for="rname">ชื่อ - นามสกุล</label>
+							<input type="text" class="form-control-input" id="r_name" name="r_name" required>
+							<label class="label-control" for="r_name">ชื่อ - นามสกุล</label>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control-input" id="remail" name="remail" required>
-							<label class="label-control" for="remail">อีเมล</label>
+							<input type="email" class="form-control-input" id="r_email" name="r_email" required>
+							<label class="label-control" for="r_email">อีเมล</label>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control-input" id="rphone" name="rphone" required>
-							<label class="label-control" for="rphone">เบอร์โทร</label>
+							<input type="text" class="form-control-input" id="r_phone" name="r_phone" required>
+							<label class="label-control" for="r_phone">เบอร์โทร</label>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
-							<select class="form-control-select" id="rselect" required>
-								<option class="select-option" value="" disabled selected>ช่วงเวลา</option>
-								<option class="select-option" value="Personal Loan"> -- </option>
-							</select>
+							<input type="datetime-local" class="form-control-input" id="r_datetime" name="r_datetime" min="<?= date("Y-m-d")."T".date("H:m"); ?>" required>
 							<div class="help-block with-errors"></div>
 						</div>
+
 
 						<div class="form-group">
 							<button type="submit" class="form-control-submit-button">ส่งยืนยัน</button>
