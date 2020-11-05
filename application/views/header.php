@@ -108,8 +108,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle page-scroll active" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">บัญชี</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?= base_url('logout'); ?>">แก้ไขบัญชี</a>
-							<div class="dropdown-items-divide-hr"></div>
+							<!-- <a class="dropdown-item" href="<?= base_url('logout'); ?>">แก้ไขบัญชี</a>
+							<div class="dropdown-items-divide-hr"></div> -->
 							<a class="dropdown-item" href="<?= base_url('logout'); ?>">ออกจากระบบ</a>
 						</div>
 					</li>

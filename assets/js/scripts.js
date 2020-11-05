@@ -283,6 +283,63 @@
         $("#loginSubmit").removeClass().addClass(msgClasses).text(msg);
     }
 
+    /* Request Form */
+    $("#requestForm").validator().on("submit", function(event) {
+        if (event.isDefaultPrevented()) {
+            // handle the invalid form...
+            rqformError();
+            rqsubmitMSG(false, "กรุณากรอกข้อมูลทุกช่อง !");
+        } else {
+            // everything looks good!
+            event.preventDefault();
+            rqsubmitForm();
+        }
+    });
+
+    function rqsubmitForm() {
+        // initiate variables with form content
+        var title = $("#r_title").val();
+        var name = $("#r_name").val();
+        var email = $("#r_email").val();
+        var phone = $("#r_phone").val();
+        var datetime = $("#r_datetime").val();
+        $.ajax({
+            type: "POST",
+            url: js_base_url('home/request'),
+            data: "title=" + title + "&fullname=" + name + "&email=" + email + "&phone=" + phone + "&datetime=" + datetime,
+            success: function(text) {
+                if (text == "success") {
+                    // console.log(text)
+                    rqformSuccess();
+                } else {
+                    // console.log(text)
+                    rqformError();
+                    rqsubmitMSG(false, text);
+                }
+            }
+        });
+    }
+
+    function rqformSuccess() {
+        $("#requestForm")[0].reset();
+        rqsubmitMSG(true, "ส่งข้อมูลสำเร็จแล้วทางเราจะติดต่อกลับไป !");
+        $("input").removeClass('notEmpty'); // resets the field label after submission
+    }
+
+    function rqformError() {
+        $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass();
+        });
+    }
+
+    function rqsubmitMSG(valid, msg) {
+        if (valid) {
+            var msgClasses = "h3 text-center tada animated";
+        } else {
+            var msgClasses = "h3 text-center";
+        }
+        $("#rmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+    }
 
     /* Privacy Form */
     $("#privacyForm").validator().on("submit", function(event) {

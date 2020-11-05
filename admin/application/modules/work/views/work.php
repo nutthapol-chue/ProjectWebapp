@@ -25,6 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">รายการ</h4>
+					<h5 class="card-subtitle text-center"><code id="commitSubmit"></code></h5>
 					<div class="table-responsive">
 						<table class="table user-table">
 							<thead>
@@ -42,14 +43,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<?php if ($works) { ?>
 									<?php foreach ($works as $key => $work) { ?>
 										<tr>
-											<td><?= $key ?></td>
+											<td><?= ++$key ?></td>
 											<td><?= $work['fullname']; ?></td>
 											<td><?= $work['email']; ?></td>
 											<td><?= $work['phone']; ?></td>
 											<td><?= $work['title']; ?></td>
-											<td><?= $work['datetime']; ?></td>
-											<td><?= $work['status']; ?></td>
-											<td></td>
+											<td>
+												<div class="form-group">
+
+													<input type="datetime-local" class="form-control-input" id="datetime<?= $work['id']; ?>" value="<?= $work['datetime']; ?>" <?= $work['status'] == 1 ? "readonly" : ''; ?>>
+												</div>
+											</td>
+											<td>
+												<?php if ($work['status'] == 0) { ?>
+													<button class="btn btn-success mx-auto mx-md-0 text-white" onclick="commitFrom(<?= $work['id']; ?>,'datetime<?= $work['id']; ?>');">อนุมัติ</button>
+													<button class="btn btn-danger mx-auto mx-md-0 text-white" onclick="delWork(<?= $work['id']; ?>);">ยกเลิกงาน</button>
+												<?php } else { ?>
+													<button class="btn btn-danger mx-auto mx-md-0 text-white" onclick="uncommitFrom(<?= $work['id']; ?>);">ยกเลิกการอนุมัติ</button>
+												<?php } ?>
+											</td>
 										</tr>
 									<?php } ?>
 								<?php } else { ?>
@@ -78,3 +90,71 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
+<script>
+	function commitMSG(msg) {
+		$("#commitSubmit").text(msg);
+	}
+
+	function commitFrom(id, id_input) {
+		event.preventDefault();
+		var datetime = $("#" + id_input).val();
+
+		$.ajax({
+			type: "POST",
+			url: js_base_url('work/commitwork'),
+			data: "id=" + id + "&datetime=" + datetime,
+			dataType: 'json',
+			encode: true,
+			success: function(text) {
+				if (text.success) {
+					commitMSG(text.success);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 1000);
+				} else {
+					commitMSG(text.error);
+				}
+			}
+		});
+	}
+
+	function uncommitFrom(id) {
+		$.ajax({
+			type: "POST",
+			url: js_base_url('work/uncommitwork'),
+			data: "id=" + id,
+			dataType: 'json',
+			encode: true,
+			success: function(text) {
+				if (text.success) {
+					commitMSG(text.success);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 1000);
+				} else {
+					commitMSG(text.error);
+				}
+			}
+		});
+	}
+
+	function delWork(id) {
+		$.ajax({
+			type: "POST",
+			url: js_base_url('work/delwork'),
+			data: "id=" + id,
+			dataType: 'json',
+			encode: true,
+			success: function(text) {
+				if (text.success) {
+					commitMSG(text.success);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 1000);
+				} else {
+					commitMSG(text.error);
+				}
+			}
+		});
+	}
+</script>

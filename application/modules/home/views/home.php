@@ -70,9 +70,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<!-- Request Form -->
 				<div class="form-container">
 					<form id="requestForm" data-toggle="validator" data-focus="false">
+						
 						<div class="form-group">
 							<input type="text" class="form-control-input" id="r_name" name="r_name" required>
 							<label class="label-control" for="r_name">ชื่อ - นามสกุล</label>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control-input" id="r_title" name="r_title" required>
+							<label class="label-control" for="r_title">เรื่องที่ต้องการติดต่อ</label>
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
@@ -86,7 +92,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="help-block with-errors"></div>
 						</div>
 						<div class="form-group">
-							<input type="datetime-local" class="form-control-input" id="r_datetime" name="r_datetime" min="<?= date("Y-m-d")."T".date("H:m"); ?>" required>
+							<input type="datetime-local" class="form-control-input" id="r_datetime" name="r_datetime" min="<?= date("Y-m-d") . "T" . date("H:m"); ?>" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
@@ -209,7 +215,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			},
 			weekNumbers: true,
 			dayMaxEvents: true, // allow "more" link when too many events
-			events: 'https://fullcalendar.io/demo-events.json'
+			events: <?= $carlendar; ?>
 		});
 
 		calendar.render();

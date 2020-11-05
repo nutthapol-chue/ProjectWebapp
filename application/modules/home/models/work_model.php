@@ -8,9 +8,33 @@ class Work_model extends CI_Model
         parent::__construct();
     }
 
-    public function saveWork()
-    {   
-        
-        $this->db->insert('works');
+    public function saveWork($data = [])
+    {   	
+
+		$datetime = date("Y-m-d",strtotime($data['datetime']))."T".date("H:i",strtotime($data['datetime']));
+
+		$insertdata = [
+			'title' => $data['title'],
+			'fullname' => $data['fullname'],
+			'email' => $data['email'],
+			'phone' => $data['phone'],
+			'status' => 0,
+			'datetime' => $datetime,
+		];
+
+		$this->db->insert('works',$insertdata);
+
+		$id = $this->db->insert_id();
+
+		return $id ? true : false;
+	}
+	
+	public function getWorks()
+    {
+		$this->db->from('works');
+		$this->db->where('status','1');
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
     }
 }

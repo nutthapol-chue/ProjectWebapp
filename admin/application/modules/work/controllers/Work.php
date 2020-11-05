@@ -28,14 +28,74 @@ class Work extends MX_Controller
 			redirect(base_url('login'));
 		}
 
-		$this->load->model('work_model','work');
+		$this->load->model('work_model', 'work');
 	}
 	public function index()
-	{	
+	{
 		$data['works'] = $this->work->getWorks();
 
 		$this->load->view('header');
-		$this->load->view('work',$data);
+		$this->load->view('work', $data);
 		$this->load->view('footer');
+	}
+
+	public function commitWork()
+	{
+		if($this->input->post()){
+
+			$datetime = date("Y-m-d",strtotime($this->input->post('datetime')))."T".date("H:i",strtotime($this->input->post('datetime')));
+
+				$update_data = [
+					'datetime' => $datetime,
+					'status' => 1
+				];
+				$this->db->where('id',$this->input->post('id'));
+				if($this->db->update('works',$update_data)){
+					$json['success'] = "อนุมัติสำเร็จ";
+				}else{
+					$json['error'] = "อนุมัติล้มเหลว";
+				}
+			
+		}else{
+			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
+		}
+		echo json_encode($json);
+	}
+
+	public function uncommitWork()
+	{
+		if($this->input->post()){
+
+				$update_data = [
+					'status' => 0
+				];
+				$this->db->where('id',$this->input->post('id'));
+				if($this->db->update('works',$update_data)){
+					$json['success'] = "ยกเลิกอนุมัติสำเร็จ";
+				}else{
+					$json['error'] = "ยกเลิกอนุมัติล้มเหลว";
+				}
+			
+		}else{
+			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
+		}
+		echo json_encode($json);
+	}
+
+	public function delWork()
+	{
+		if($this->input->post()){
+
+				$this->db->where('id',$this->input->post('id'));
+				if($this->db->delete('works')){
+					$json['success'] = "ยกเลิกงานสำเร็จ";
+				}else{
+					$json['error'] = "ยกเลิกงานล้มเหลว";
+				}
+			
+		}else{
+			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
+		}
+		echo json_encode($json);
 	}
 }

@@ -10,7 +10,8 @@ class Work_model extends CI_Model
 
     public function getWorks()
     {
-        $this->db->from('works');
+		$this->db->from('works');
+		$this->db->order_by('id','DESC');
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;
