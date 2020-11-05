@@ -135,6 +135,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<i class="mdi mr-2 mdi-table"></i><span class="hide-menu">อนุมัติงาน</span>
 							</a>
 						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link waves-effect waves-dark sidebar-link <?= $this->router->class == 'work' ? 'active' : ''; ?>" href="<?= base_url('chat'); ?>" aria-expanded="false">
+								<i class="mdi mr-2 mdi-table"></i><span class="hide-menu">แชท</span>
+							</a>
+						</li>
 					</ul>
 
 				</nav>
