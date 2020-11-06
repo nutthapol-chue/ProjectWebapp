@@ -36,6 +36,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<th class="border-top-0">เบอร์โทร</th>
 									<th class="border-top-0">หัวข้อ</th>
 									<th class="border-top-0">ช่วงวันเวลา</th>
+									<th class="border-top-0"></th>
 									<th class="border-top-0">ตัวเลือก</th>
 								</tr>
 							</thead>
@@ -50,16 +51,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											<td><?= $work['title']; ?></td>
 											<td>
 												<div class="form-group">
-
-													<input type="datetime-local" class="form-control-input" id="datetime<?= $work['id']; ?>" value="<?= $work['datetime']; ?>" <?= $work['status'] == 1 ? "readonly" : ''; ?>>
+													<input type="datetime-local" class="form-control" id="datetime<?= $work['id']; ?>" value="<?= $work['datetime']; ?>" <?= $work['status'] == 1 || $work['status'] == 2 ? "readonly" : ''; ?>>
 												</div>
 											</td>
+											<td><button class="btn btn-info mx-auto mx-md-0 text-white" onclick="detailFrom(<?= $work['id']; ?>);">รายละเอียด</button></td>
 											<td>
 												<?php if ($work['status'] == 0) { ?>
 													<button class="btn btn-success mx-auto mx-md-0 text-white" onclick="commitFrom(<?= $work['id']; ?>,'datetime<?= $work['id']; ?>');">อนุมัติ</button>
 													<button class="btn btn-danger mx-auto mx-md-0 text-white" onclick="delWork(<?= $work['id']; ?>);">ยกเลิกงาน</button>
-												<?php } else { ?>
+												<?php } elseif ($work['status'] == 1) { ?>
 													<button class="btn btn-danger mx-auto mx-md-0 text-white" onclick="uncommitFrom(<?= $work['id']; ?>);">ยกเลิกการอนุมัติ</button>
+													<button class="btn btn-success mx-auto mx-md-0 text-white" onclick="successWork(<?= $work['id']; ?>);">เสร็จสิ้น</button>
+												<?php } else { ?>
+
 												<?php } ?>
 											</td>
 										</tr>
@@ -90,6 +94,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
+
+<div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content" id="workInfo_modal">
+
+		</div>
+	</div>
+</div>
 <script>
 	function commitMSG(msg) {
 		$("#commitSubmit").text(msg);
@@ -143,6 +155,58 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			type: "POST",
 			url: js_base_url('work/delwork'),
 			data: "id=" + id,
+			dataType: 'json',
+			encode: true,
+			success: function(text) {
+				if (text.success) {
+					commitMSG(text.success);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 1000);
+				} else {
+					commitMSG(text.error);
+				}
+			}
+		});
+	}
+
+	function detailFrom(id) {
+		$.ajax({
+			type: "GET",
+			url: js_base_url('work/detail'),
+			data: "id=" + id,
+			success: function(text) {
+				document.getElementById("workInfo_modal").innerHTML = text
+				$('#detailModal').modal('show')
+			}
+		});
+	}
+
+	function saveDetailFrom(id) {
+		event.preventDefault();
+		var detail = $("#detail_work").val();
+
+		$.ajax({
+			type: "POST",
+			url: js_base_url('work/savedetail'),
+			data: "id=" + id + "&detail=" + detail,
+			dataType: 'json',
+			encode: true,
+			success: function(text) {
+				if (text.success) {
+					$("#detailSubmit").text(text.success);
+				} else {
+					$("#detailSubmit").text(text.error);
+				}
+			}
+		});
+	}
+
+	function successWork(id) {
+		$.ajax({
+			type: "POST",
+			url: js_base_url('work/success'),
+			data: "id=" + id ,
 			dataType: 'json',
 			encode: true,
 			success: function(text) {

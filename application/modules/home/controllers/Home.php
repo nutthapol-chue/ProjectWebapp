@@ -42,7 +42,7 @@ class Home extends MX_Controller
 
 		if ($this->input->post()) {
 			$post = $this->input->post();
-			
+
 			if ($this->work->saveWork($post)) {
 				echo 'success';
 			} else {
@@ -57,12 +57,30 @@ class Home extends MX_Controller
 	{
 		$this->load->model('work_model', 'work');
 		$result = $this->work->getWorks();
+		$json = [];
 		foreach ($result as $data) {
-			$json[] = [
-				'title' => $data['title'],
-				'start' => $data['datetime'],
-			];
+			if ($data['status'] > 0) {
+
+				if ($data['status'] == 1) {
+					$color = 'purple';
+				} elseif ($data['status'] == 2) {
+					$color = 'green';
+				} else {
+					$color = '';
+				}
+
+				$json[] = [
+					'title' => $data['title'],
+					'start' => $data['datetime'],
+					'color' =>  $color,
+				];
+			}
 		}
-		return count($result) > 0 ? json_encode($json) : '';	
+		if (count($json) > 0) {
+			$output =	json_encode($json);
+		} else {
+			$output = '';
+		}
+		return $output;
 	}
 }

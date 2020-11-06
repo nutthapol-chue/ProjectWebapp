@@ -41,22 +41,21 @@ class Work extends MX_Controller
 
 	public function commitWork()
 	{
-		if($this->input->post()){
+		if ($this->input->post()) {
 
-			$datetime = date("Y-m-d",strtotime($this->input->post('datetime')))."T".date("H:i",strtotime($this->input->post('datetime')));
+			$datetime = date("Y-m-d", strtotime($this->input->post('datetime'))) . "T" . date("H:i", strtotime($this->input->post('datetime')));
 
-				$update_data = [
-					'datetime' => $datetime,
-					'status' => 1
-				];
-				$this->db->where('id',$this->input->post('id'));
-				if($this->db->update('works',$update_data)){
-					$json['success'] = "อนุมัติสำเร็จ";
-				}else{
-					$json['error'] = "อนุมัติล้มเหลว";
-				}
-			
-		}else{
+			$update_data = [
+				'datetime' => $datetime,
+				'status' => 1
+			];
+			$this->db->where('id', $this->input->post('id'));
+			if ($this->db->update('works', $update_data)) {
+				$json['success'] = "อนุมัติสำเร็จ";
+			} else {
+				$json['error'] = "อนุมัติล้มเหลวกรุณาลองใหม่อีกครั้ง";
+			}
+		} else {
 			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
 		}
 		echo json_encode($json);
@@ -64,19 +63,18 @@ class Work extends MX_Controller
 
 	public function uncommitWork()
 	{
-		if($this->input->post()){
+		if ($this->input->post()) {
 
-				$update_data = [
-					'status' => 0
-				];
-				$this->db->where('id',$this->input->post('id'));
-				if($this->db->update('works',$update_data)){
-					$json['success'] = "ยกเลิกอนุมัติสำเร็จ";
-				}else{
-					$json['error'] = "ยกเลิกอนุมัติล้มเหลว";
-				}
-			
-		}else{
+			$update_data = [
+				'status' => 0
+			];
+			$this->db->where('id', $this->input->post('id'));
+			if ($this->db->update('works', $update_data)) {
+				$json['success'] = "ยกเลิกอนุมัติสำเร็จ";
+			} else {
+				$json['error'] = "ยกเลิกอนุมัติล้มเหลว";
+			}
+		} else {
 			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
 		}
 		echo json_encode($json);
@@ -84,16 +82,64 @@ class Work extends MX_Controller
 
 	public function delWork()
 	{
-		if($this->input->post()){
+		if ($this->input->post()) {
 
-				$this->db->where('id',$this->input->post('id'));
-				if($this->db->delete('works')){
-					$json['success'] = "ยกเลิกงานสำเร็จ";
-				}else{
-					$json['error'] = "ยกเลิกงานล้มเหลว";
-				}
-			
+			$this->db->where('id', $this->input->post('id'));
+			if ($this->db->delete('works')) {
+				$json['success'] = "ยกเลิกงานสำเร็จ";
+			} else {
+				$json['error'] = "ยกเลิกงานล้มเหลวกรุณาลองใหม่อีกครั้ง";
+			}
+		} else {
+			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
+		}
+		echo json_encode($json);
+	}
+
+	public function detail()
+	{
+		if ($work = $this->work->getWork($this->input->get('id'))) {
+			$data['work'] = $work;
 		}else{
+			$data['error'] = "เกิดข้อผิดพลาดกรุณาลองใหม่อีกครับ";
+		}
+
+		$this->load->view('detail', $data);
+	}
+
+	public function savedetail()
+	{
+		if ($this->input->post()) {
+
+			$update_data = [
+				'detail' => $this->input->post('detail'),
+			];
+
+			$this->db->where('id', $this->input->post('id'));
+			if ($this->db->update('works', $update_data)) {
+				$json['success'] = "บันทึกสำเร็จ";
+			} else {
+				$json['error'] = "บันทึกล้มเหลวกรุณาลองใหม่อีกครั้ง";
+			}
+		} else {
+			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
+		}
+		echo json_encode($json);
+	}
+	public function success()
+	{
+		if ($this->input->post()) {
+
+			$update_data = [
+				'status' => 2
+			];
+			$this->db->where('id', $this->input->post('id'));
+			if ($this->db->update('works', $update_data)) {
+				$json['success'] = "ยินดีด้วยคุณเสร็จไปหนึ่งงานแล้ว !";
+			} else {
+				$json['error'] = "ล้มเหลวกรุณาลองใหม่อีกครั้ง";
+			}
+		} else {
 			$json['error'] = "พบข้อผิดพลาดกรุณาลองใหม่อีกครั้ง";
 		}
 		echo json_encode($json);

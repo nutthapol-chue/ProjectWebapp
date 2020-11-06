@@ -1,17 +1,17 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Work_model extends CI_Model
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
-    public function saveWork($data = [])
-    {   	
+	public function saveWork($data = [])
+	{
 
-		$datetime = date("Y-m-d",strtotime($data['datetime']))."T".date("H:i",strtotime($data['datetime']));
+		$datetime = date("Y-m-d", strtotime($data['datetime'])) . "T" . date("H:i", strtotime($data['datetime']));
 
 		$insertdata = [
 			'title' => $data['title'],
@@ -22,19 +22,18 @@ class Work_model extends CI_Model
 			'datetime' => $datetime,
 		];
 
-		$this->db->insert('works',$insertdata);
+		$this->db->insert('works', $insertdata);
 
 		$id = $this->db->insert_id();
 
 		return $id ? true : false;
 	}
-	
+
 	public function getWorks()
-    {
+	{
 		$this->db->from('works');
-		$this->db->where('status','1');
-        $query = $this->db->get();
-        $result = $query->result_array();
-        return $result;
-    }
+		$query = $this->db->get();
+		$result = $query->result_array();
+		return $result;
+	}
 }

@@ -16,4 +16,15 @@ class Work_model extends CI_Model
         $result = $query->result_array();
         return $result;
     }
+
+    public function getWork($id)
+    {
+		$this->db->from('works');
+		$this->db->where('id',$id);
+        $query = $this->db->get();
+        $result = $query->row_array();
+        return $result;
+    }
+
+   
 }

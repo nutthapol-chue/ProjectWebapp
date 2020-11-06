@@ -136,8 +136,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</a>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link waves-effect waves-dark sidebar-link <?= $this->router->class == 'work' ? 'active' : ''; ?>" href="<?= base_url('chat'); ?>" aria-expanded="false">
-								<i class="mdi mr-2 mdi-table"></i><span class="hide-menu">แชท</span>
+							<a class="sidebar-link waves-effect waves-dark sidebar-link <?= $this->router->class == 'chat' ? 'active' : ''; ?>" href="<?= base_url('chat'); ?>" aria-expanded="false">
+								<i class="mdi mr-2 mdi-wechat"></i><span class="hide-menu">แชท</span>
 							</a>
 						</li>
 					</ul>

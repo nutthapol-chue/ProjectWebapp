@@ -34,7 +34,7 @@ class Chat extends MX_Controller
 	{
 
 		$this->load->view('header');
-		$this->load->view('chat',);
+		$this->load->view('chat');
 		$this->load->view('footer');
 	}
 }

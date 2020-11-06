@@ -34,17 +34,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <!-- Services -->
-<div id="calendar">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>ตารางงาน</h2>
+<?php if ($carlendar != null) { ?>
+	<div id="calendar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>ตารางงาน</h2>
+				</div>
+			</div>
+			<div id="calendar_table">
 			</div>
 		</div>
-		<div id="calendar_table">
-		</div>
 	</div>
-</div>
+<?php } ?>
 <!-- end of cards-1 -->
 <!-- end of services -->
 
@@ -70,7 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<!-- Request Form -->
 				<div class="form-container">
 					<form id="requestForm" data-toggle="validator" data-focus="false">
-						
+
 						<div class="form-group">
 							<input type="text" class="form-control-input" id="r_name" name="r_name" required>
 							<label class="label-control" for="r_name">ชื่อ - นามสกุล</label>
@@ -215,7 +217,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			},
 			weekNumbers: true,
 			dayMaxEvents: true, // allow "more" link when too many events
-			events: <?= $carlendar; ?>
+			eventColor: 'green',
+			<?php if ($carlendar != null) { ?>
+				events: <?= $carlendar; ?>
+			<?php } ?>
 		});
 
 		calendar.render();
