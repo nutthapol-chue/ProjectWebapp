@@ -170,7 +170,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <!-- Scripts -->
-<script src="/assets/js/jquery.min.js"></script>
 <!-- jQuery for Bootstrap's JavaScript plugins -->
 <script src="/assets/js/popper.min.js"></script>
 <!-- Popper tooltip library for Bootstrap -->

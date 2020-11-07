@@ -1,7 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-
+<style>
+	#chat_history {
+		height: 300px;
+		overflow-y: scroll;
+		overflow: auto
+	}
+</style>
 <header id="header" class="ex-header">
 	<div class="header-content">
 		<div class="container">
@@ -29,6 +35,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<ul class="list-unstyled li-space-lg indent">
 								<li class="media">
 									<i class="fas fa-square"></i>
+									<div class="media-body">สามารถสอบถามหรือพูดคุยเกี่ยวกับหัวข้องานได้เลย</div>
+								</li>
+								<li class="media">
+									<i class="fas fa-square"></i>
 									<div class="media-body">หลังจากส่งข้อความแล้วจะตอบกลับภายใน 24 ชม.</div>
 								</li>
 							</ul>
@@ -37,13 +47,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
-								<div class="card-body" style="height: 400px;">
-									<div class="text-left">
-										<div class="text-left">
-											<strong class="mr-auto">Admin</strong>
-										</div>
-										<div class="toast-body">
-											sss
+								<div class="card-body chat_history" style="height: 400px;" id="chat_history">
+								</div>
+								<div class="card-footer text-muted">
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="comment" placeholder="ข้อความ" aria-describedby="basic-addon2">
+										<div class="input-group-append">
+											<button type="button" class="btn btn-primary" onclick="chat_submit()">ส่ง</button>
 										</div>
 									</div>
 								</div>
@@ -57,81 +67,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div> <!-- end of ex-basic-2 -->
 <!-- end of privacy content -->
 
-
-
-<div class="modal fade" id="chatModal" tabindex="-1" aria-hidden="true" onclick="stopChat()">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content" id="chatContent">
-
-		</div>
-	</div>
-</div>
-
 <script>
+	/* Chat */
+	var scrolled = false;
+
 	$(document).ready(function() {
-		selectUsers()
-		stopChat()
+
+		chat_history()
+
 		setInterval(function() {
-			selectUsers()
-		}, 3000);
-		setInterval(function() {
-			if (getCookie('chat_id') != null) {
-				chat_history(getCookie('chat_id'))
+			if (!scrolled) {
+				updateScroll()
 			}
-		}, 3000);
+			chat_history()
+		}, 1000);
+	});
+
+	function updateScroll() {
+		if (!scrolled) {
+			var element = document.getElementById("chat_history");
+			element.scrollTop = element.scrollHeight;
+			scrolled = true
+		}
+	}
+
+	$("#yourDivID").on('scroll', function() {
+		scrolled = true;
 	});
 
 
-	function getCookie(cname) {
-		var name = cname + "=";
-		var decodedCookie = decodeURIComponent(document.cookie);
-		var ca = decodedCookie.split(';');
-		for (var i = 0; i < ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0) == ' ') {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length, c.length);
-			}
-		}
-		return "";
-	}
-
-	function selectUsers() {
+	function chat_history() {
 		$.ajax({
-			url: js_base_url('chat/selectusers'),
-			success: function(text) {
-				document.getElementById("selectUsers").innerHTML = text
-			}
-		});
-	}
-
-	function chatFrom(id) {
-		$.ajax({
-			type: "GET",
-			url: js_base_url('chat/chat_msg'),
-			data: "id=" + id,
-			success: function(text) {
-				document.getElementById("chatContent").innerHTML = text
-				chat_history(id)
-				document.cookie = "chat_id=" + id + ";"
-
-				$('#chatModal').modal('show')
-			}
-		});
-	}
-
-	function stopChat() {
-		document.cookie = "chat_id='';"
-		$('#chatModal').modal('hide')
-	}
-
-	function chat_history(id) {
-		$.ajax({
-			type: "GET",
 			url: js_base_url('chat/chat_history'),
-			data: "id=" + id,
 			success: function(text) {
 				if (text != 'error') {
 					document.getElementById("chat_history").innerHTML = text
@@ -140,14 +107,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		});
 	}
 
-	function chat_submit(id) {
+	function chat_submit() {
 		event.preventDefault();
 		var comment = $("#comment").val();
 
 		$.ajax({
 			type: "POST",
 			url: js_base_url('chat/chat_submit'),
-			data: "id=" + id + "&comment=" + comment,
+			data: "comment=" + comment,
 			dataType: 'json',
 			encode: true,
 			success: function(text) {

@@ -22,14 +22,5 @@ class Chat_model extends CI_Model
         $this->db->update('chat');
 		return $result;
     }
-    public function getCommentCount($id)
-    {
-        $this->db->from('chat');
-        $this->db->where('user_id',$id);
-        $this->db->where('status',0);
-		$query = $this->db->get();
-		$result = $query->num_rows();
-		return $result;
-    }
 
 }

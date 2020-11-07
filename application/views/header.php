@@ -44,6 +44,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Favicon  -->
 	<link rel="icon" href="/assets/images/favicon.ico">
 
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -77,19 +80,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#header">หนัาหลัก <span class="sr-only">(current)</span></a>
+					<a class="nav-link page-scroll" href="<?=  $this->router->class == 'home' ? '#header': base_url(); ?>">หนัาหลัก <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#calendar">ตารางงาน</a>
+					<a class="nav-link page-scroll" href="<?=  $this->router->class == 'home' ? '#calendar': base_url()."#calendar"; ?>">ตารางงาน</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#request">นัดหมาย</a>
+					<a class="nav-link page-scroll" href="<?=  $this->router->class == 'home' ? '#request': base_url()."#request"; ?>">นัดหมาย</a>
 				</li>
 
 				<!-- Dropdown Menu -->
 				<li class="nav-item dropdown">
 					<!-- class  dropdown-toggle -->
-					<a class="nav-link page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">เกี่ยวกับ</a>
+					<a class="nav-link page-scroll" href="<?=  $this->router->class == 'home' ? '#about': base_url()."#about"; ?>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">เกี่ยวกับ</a>
 					<!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
                         <div class="dropdown-items-divide-hr"></div>
@@ -99,7 +102,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<!-- end of dropdown menu -->
 
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="#contact">ติดต่อ</a>
+					<a class="nav-link page-scroll" href="<?=  $this->router->class == 'home' ? '#contact	': base_url()."#contact	"; ?>">ติดต่อ</a>
 				</li>
 				<?php if (!empty($this->session->userdata('user_account'))) { ?>
 					<li class="nav-item">

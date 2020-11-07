@@ -96,7 +96,7 @@ class User_Authentication extends MX_Controller
 		// Remove local Facebook session 
 		$this->facebook->destroy_session();
 		// Remove user data from session 
-		$this->session->destroy_session('user_account');
+		$this->session->unset_userdata('user_account');
 		// Redirect to login page 
 		redirect(base_url(''));
 	}

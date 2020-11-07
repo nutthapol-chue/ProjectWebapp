@@ -24,8 +24,8 @@ class Chat extends MX_Controller
 	{
 		parent::__construct();
 
-		if (empty($this->session->userdata('admin_account'))) {
-			redirect(base_url('login'));
+		if (empty($this->session->userdata('user_account'))) {
+			redirect(base_url());
 		}
 
 		$this->load->model('chat_model', 'chat');
@@ -37,30 +37,17 @@ class Chat extends MX_Controller
 		$this->load->view('chat');
 		$this->load->view('footer');
 	}
-	public function selectusers()
-	{
-		$data['users'] =  $this->user->getUsers();
-		$this->load->view('select_users',$data);
-	}
-
-	public function chat_msg()
-	{
-
-		$data['msgs'] = $this->chat->getComment($this->input->get('id'));
-		$data['user'] =  $this->user->getUser($this->input->get('id'));
-
-		$this->load->view('chat_msg', $data);
-	}
 
 	public function chat_submit()
 	{
 
-		$admin_id = $this->session->userdata('admin_account')['id'];
+		$user_id = $this->session->userdata('user_account')['id'];
 		
 		$insert_data = [
-			'user_id' => $this->input->post('id'),
-			'admin_id' => $admin_id,
-			'respondent' => $admin_id,
+			'user_id' => $user_id,
+			'admin_id' => 0,
+			'respondent' => $user_id,
+			'respondent_status' => 'user',
 			'comment' => $this->input->post('comment')
 		]; 
 
@@ -73,9 +60,9 @@ class Chat extends MX_Controller
 
 	public function chat_history()
 	{
+		$user_id = $this->session->userdata('user_account')['id'];
 
-		$data['msgs'] = $this->chat->getComment($this->input->get('id'));
-		$data['user'] =  $this->user->getUser($this->input->get('id'));
+		$data['msgs'] = $this->chat->getComment($user_id);
 
 		$this->load->view('chat_history', $data);
 	}

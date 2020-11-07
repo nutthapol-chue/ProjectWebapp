@@ -1,9 +1,10 @@
-<?php if ($msgs != null) { ?>
-    <?php foreach ($msgs as $msg) { ?>
-        <?php if ($msg['respondent'] == $user['id']) { ?>
+<?php if ($msgs != null) {  ?>
+
+    <?php foreach ($msgs as $msg) { $admin = $this->user->getAdmin($msg['admin_id']); ?>
+        <?php if ($msg['respondent_status'] == 'admin') {  ?>
             <div class="text-left">
                 <div class="text-left">
-                    <strong class="mr-auto"><?= $user['first_name'] ?></strong>
+                    <strong class="mr-auto">Admin <?= $admin['first_name'] ?></strong>
                 </div>
                 <div class="toast-body">
                     <?= $msg['comment'] ?>

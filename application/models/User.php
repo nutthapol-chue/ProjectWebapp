@@ -81,4 +81,20 @@ class User extends CI_Model
 			}
 		}
 	}
+
+	public function getUsers()
+	{
+		$this->db->from('users');
+		$query = $this->db->get();
+		$result = $query->result_array();
+		return $result;
+	}
+	public function getAdmin($id)
+	{
+		$this->db->from('admin');
+        $this->db->where('id',$id);
+		$query = $this->db->get();
+		$result = $query->row_array();
+		return $result;
+	}
 }

@@ -61,6 +61,7 @@ class Chat extends MX_Controller
 			'user_id' => $this->input->post('id'),
 			'admin_id' => $admin_id,
 			'respondent' => $admin_id,
+			'respondent_status' => 'admin',
 			'comment' => $this->input->post('comment')
 		]; 
 
