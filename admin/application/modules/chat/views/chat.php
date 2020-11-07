@@ -32,19 +32,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div>
 
 <script>
+	var scrolled = false;
+
 	$(document).ready(function() {
 		selectUsers()
 		stopChat()
 		setInterval(function() {
 			selectUsers()
-		}, 3000);
+		}, 1000);
 		setInterval(function() {
 			if (getCookie('chat_id') != null) {
+				updateScroll()
 				chat_history(getCookie('chat_id'))
 			}
-		}, 3000);
+		}, 1000);
 	});
 
+	function updateScroll() {
+		if (!scrolled) {
+			var element = document.getElementById("chat_history");
+			element.scrollTop = element.scrollHeight;
+			scrolled = true
+		}
+	}
 
 	function getCookie(cname) {
 		var name = cname + "=";
@@ -78,6 +88,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			data: "id=" + id,
 			success: function(text) {
 				document.getElementById("chatContent").innerHTML = text
+				scrolled = false
 				chat_history(id)
 				document.cookie = "chat_id=" + id + ";"
 
@@ -88,6 +99,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	function stopChat() {
 		document.cookie = "chat_id='';"
+		document.getElementById("chatContent").innerHTML = ""
 		$('#chatModal').modal('hide')
 	}
 
@@ -116,6 +128,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			encode: true,
 			success: function(text) {
 				$("#comment").val("");
+				scrolled = false
 				chat_history(id);
 			}
 		});
