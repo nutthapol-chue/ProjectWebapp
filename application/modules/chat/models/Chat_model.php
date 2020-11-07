@@ -18,7 +18,7 @@ class Chat_model extends CI_Model
         $this->db->set('status','1');
         $this->db->where('user_id',$id);
         $this->db->where('respondent',$id);
-        $this->db->where('respondent_status','user');
+        $this->db->where('respondent_status','admin');
         $this->db->update('chat');
 		return $result;
     }

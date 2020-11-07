@@ -2115,7 +2115,7 @@ a:hover.back-to-top {
     /* end of contact */
     /* Extra Pages */
     .ex-header {
-        background: url('../images/ex-header-background.jpg') center center no-repeat;
+        background: url('/assets/images/header-background.jpg') center center no-repeat;
         background-size: cover;
     }
     .ex-header h1 {

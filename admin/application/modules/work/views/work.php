@@ -63,7 +63,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 													<button class="btn btn-danger mx-auto mx-md-0 text-white" onclick="uncommitFrom(<?= $work['id']; ?>);">ยกเลิกการอนุมัติ</button>
 													<button class="btn btn-success mx-auto mx-md-0 text-white" onclick="successWork(<?= $work['id']; ?>);">เสร็จสิ้น</button>
 												<?php } else { ?>
-
+													<p style="color:green;">เสร็จสิ้นแล้ว !</p>
 												<?php } ?>
 											</td>
 										</tr>

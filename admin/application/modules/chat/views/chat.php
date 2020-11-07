@@ -14,10 +14,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-body">
-			<div class="row">
-				<div class="col-2">
-					<button class="btn btn-success btn-block mx-auto mb-2 text-white" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-account"></i> Nutthapol</button>
-				</div>
+			<div class="row" id="selectUsers">
+
 			</div>
 		</div>
 	</div>
@@ -25,41 +23,101 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="chatModal" tabindex="-1" aria-hidden="true" onclick="stopChat()">
 	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Nutthapol</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="text-left">
-					<div class="text-left">
-						<strong class="mr-auto">Nutthapol</strong>
-					</div>
-					<div class="toast-body">
-						Hello, world! This is a toast message.
-					</div>
-				</div>
-				<div class="text-right">
-					<div class="text-right">
-						<strong class="mr-auto">You</strong>
-					</div>
-					<div class="toast-body">
-						Hello, world! This is a toast message.
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" placeholder="ข้อความ" aria-label="ข้อความ" aria-describedby="basic-addon2">
-					<div class="input-group-append">
-						<button type="button" class="btn btn-primary">ส่ง</button>
-					</div>
-				</div>
-			</div>
+		<div class="modal-content" id="chatContent">
+
 		</div>
 	</div>
 </div>
+
+<script>
+	// $(document).ready(function() {
+	// 	selectUsers()
+	// 	stopChat()
+	// 	setInterval(function() {
+	// 		selectUsers()
+	// 	}, 3000);
+	// 	setInterval(function() {
+	// 		if (getCookie('chat_id') != null) {
+	// 			chat_history(getCookie('chat_id'))
+	// 		}
+	// 	}, 3000);
+	// });
+
+
+	// function getCookie(cname) {
+	// 	var name = cname + "=";
+	// 	var decodedCookie = decodeURIComponent(document.cookie);
+	// 	var ca = decodedCookie.split(';');
+	// 	for (var i = 0; i < ca.length; i++) {
+	// 		var c = ca[i];
+	// 		while (c.charAt(0) == ' ') {
+	// 			c = c.substring(1);
+	// 		}
+	// 		if (c.indexOf(name) == 0) {
+	// 			return c.substring(name.length, c.length);
+	// 		}
+	// 	}
+	// 	return "";
+	// }
+
+	// function selectUsers() {
+	// 	$.ajax({
+	// 		url: js_base_url('chat/selectusers'),
+	// 		success: function(text) {
+	// 			document.getElementById("selectUsers").innerHTML = text
+	// 		}
+	// 	});
+	// }
+
+	// function chatFrom(id) {
+	// 	$.ajax({
+	// 		type: "GET",
+	// 		url: js_base_url('chat/chat_msg'),
+	// 		data: "id=" + id,
+	// 		success: function(text) {
+	// 			document.getElementById("chatContent").innerHTML = text
+	// 			chat_history(id)
+	// 			document.cookie = "chat_id=" + id + ";"
+
+	// 			$('#chatModal').modal('show')
+	// 		}
+	// 	});
+	// }
+
+	// function stopChat() {
+	// 	document.cookie = "chat_id='';"
+	// 	$('#chatModal').modal('hide')
+	// }
+
+	// function chat_history(id) {
+	// 	$.ajax({
+	// 		type: "GET",
+	// 		url: js_base_url('chat/chat_history'),
+	// 		data: "id=" + id,
+	// 		success: function(text) {
+	// 			if (text != 'error') {
+	// 				document.getElementById("chat_history").innerHTML = text
+	// 			}
+	// 		}
+	// 	});
+	// }
+
+	// function chat_submit(id) {
+	// 	event.preventDefault();
+	// 	var comment = $("#comment").val();
+
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: js_base_url('chat/chat_submit'),
+	// 		data: "id=" + id + "&comment=" + comment,
+	// 		dataType: 'json',
+	// 		encode: true,
+	// 		success: function(text) {
+	// 			$("#comment").val("");
+	// 			chat_history(id);
+	// 		}
+	// 	});
+	// }
+</script>

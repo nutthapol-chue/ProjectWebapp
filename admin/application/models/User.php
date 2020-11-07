@@ -8,8 +8,6 @@ class User extends CI_Model
 		parent::__construct();
 		$this->tableName = 'users';
 		$this->primaryKey = 'id';
-
-	
 	}
 
 	/*
@@ -48,5 +46,21 @@ class User extends CI_Model
 
 		//return user ID
 		return $userID ? $userID : FALSE;
+	}
+
+	public function getUsers()
+	{
+		$this->db->from('users');
+		$query = $this->db->get();
+		$result = $query->result_array();
+		return $result;
+	}
+	public function getUser($id)
+	{
+		$this->db->from('users');
+        $this->db->where('id',$id);
+		$query = $this->db->get();
+		$result = $query->row_array();
+		return $result;
 	}
 }
