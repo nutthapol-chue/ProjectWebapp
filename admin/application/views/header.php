@@ -121,7 +121,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<nav class="sidebar-nav">
 					<ul id="sidebarnav">
 						<!-- User Profile-->
-						<li class="sidebar-item">
+						<!-- <li class="sidebar-item">
 							<a class="sidebar-link waves-effect waves-dark sidebar-link <?= $this->router->class == 'home' ? 'active' : ''; ?>" href="<?= index_page(); ?>" aria-expanded="false">
 								<i class="mdi mr-2 mdi-gauge"></i><span class="hide-menu">แดชบอร์ด</span></a>
 						</li>
@@ -129,7 +129,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<a class="sidebar-link waves-effect waves-dark sidebar-link <?= $this->router->class == 'profile' ? 'active' : ''; ?>" href="#" aria-expanded="false">
 								<i class="mdi mr-2 mdi-account-check"></i><span class="hide-menu">โปรไฟล์</span>
 							</a>
-						</li>
+						</li> -->
 						<li class="sidebar-item">
 							<a class="sidebar-link waves-effect waves-dark sidebar-link <?= $this->router->class == 'work' ? 'active' : ''; ?>" href="<?= base_url('work'); ?>" aria-expanded="false">
 								<i class="mdi mr-2 mdi-table"></i><span class="hide-menu">อนุมัติงาน</span>

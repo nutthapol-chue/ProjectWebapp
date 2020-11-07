@@ -1,6 +1,6 @@
 <?php if ($msgs != null) { ?>
     <?php foreach ($msgs as $msg) { ?>
-        <?php if ($msg['respondent'] == $user['id']) { ?>
+        <?php if ($msg['respondent_status'] == 'user') { ?>
             <div class="text-left">
                 <div class="text-left">
                     <strong class="mr-auto"><?= $user['first_name'] ?></strong>
