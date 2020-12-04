@@ -148,6 +148,14 @@ a.white {
     color: rgb(192, 16, 183);
 }
 
+.color-green {
+    color: rgb(14, 184, 20);
+}
+
+.color-red {
+    color: rgb(214, 12, 12);
+}
+
 .btn-solid-reg {
     display: inline-block;
     padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
@@ -420,7 +428,7 @@ screen and (-ms-high-contrast: none) {
 #pmsgSubmit.h3.text-center {
     display: block;
     margin-bottom: 0;
-    color: rgb(206, 21, 21);
+    /* color: rgb(206, 21, 21); */
     font: 400 1.125rem/1rem 'Sriracha', cursive;
 }
 

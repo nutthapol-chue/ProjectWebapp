@@ -7,23 +7,23 @@
 
 
 
-var js_base_url = function (url) {
-    //var base_urls = window.location.origin;
-    //var host = window.location.host;
-    //var pathArray = window.location.pathname.split('/');
-    var getUrl = window.location;
-    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-    if (url === undefined || url === null)
-        url = '';
-    return baseUrl + '/' + url;
-}
-/* Preloader */
-$(window).on('load', function () {
+var js_base_url = function(url) {
+        //var base_urls = window.location.origin;
+        //var host = window.location.host;
+        //var pathArray = window.location.pathname.split('/');
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        if (url === undefined || url === null)
+            url = '';
+        return baseUrl + '/' + url;
+    }
+    /* Preloader */
+$(window).on('load', function() {
     var preloaderFadeOutTime = 500;
 
     function hidePreloader() {
         var preloader = $('.spinner-wrapper');
-        setTimeout(function () {
+        setTimeout(function() {
             preloader.fadeOut(preloaderFadeOutTime);
         }, 500);
     }
@@ -33,7 +33,7 @@ $(window).on('load', function () {
 
 /* Navbar Scripts */
 // jQuery to collapse the navbar on scroll
-$(window).on('scroll load', function () {
+$(window).on('scroll load', function() {
     if ($(".navbar").offset().top > 60) {
         $(".fixed-top").addClass("top-nav-collapse");
     } else {
@@ -42,8 +42,8 @@ $(window).on('scroll load', function () {
 });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function () {
-    $(document).on('click', 'a.page-scroll', function (event) {
+$(function() {
+    $(document).on('click', 'a.page-scroll', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
@@ -53,7 +53,7 @@ $(function () {
 });
 
 // closes the responsive menu on menu item click
-$(".navbar-nav li a").on("click", function (event) {
+$(".navbar-nav li a").on("click", function(event) {
     if (!$(this).parent().hasClass('dropdown'))
         $(".navbar-collapse").collapse('hide');
 });
@@ -120,7 +120,7 @@ $('.popup-youtube, .popup-vimeo').magnificPopup({
         patterns: {
             youtube: {
                 index: 'youtube.com/',
-                id: function (url) {
+                id: function(url) {
                     var m = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
                     if (!m || !m[1]) return null;
                     return m[1];
@@ -129,7 +129,7 @@ $('.popup-youtube, .popup-vimeo').magnificPopup({
             },
             vimeo: {
                 index: 'vimeo.com/',
-                id: function (url) {
+                id: function(url) {
                     var m = url.match(/(https?:\/\/)?(www.)?(player.)?vimeo.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/);
                     if (!m || !m[5]) return null;
                     return m[5];
@@ -158,7 +158,7 @@ $('.popup-with-move-anim').magnificPopup({
 
 /* Move Form Fields Label When User Types */
 // for input and textarea fields
-$("input, textarea").keyup(function () {
+$("input, textarea").keyup(function() {
     if ($(this).val() != '') {
         $(this).addClass('notEmpty');
     } else {
@@ -168,7 +168,7 @@ $("input, textarea").keyup(function () {
 
 
 /* Register Form */
-$("#registerForm").validator().on("submit", function (event) {
+$("#registerForm").validator().on("submit", function(event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         rformError();
@@ -192,7 +192,7 @@ function rsubmitForm() {
         type: "POST",
         url: js_base_url('register'),
         data: "c_fname=" + fname + "&c_lname=" + lname + "&c_email=" + email + "&c_pass=" + c_pass + "&re_c_pass=" + re_c_pass,
-        success: function (text) {
+        success: function(text) {
             if (text == "success") {
                 rformSuccess();
             } else {
@@ -210,23 +210,23 @@ function rformSuccess() {
 }
 
 function rformError() {
-    $("#registerForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    $("#registerForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $(this).removeClass();
     });
 }
 
 function rsubmitMSG(valid, msg) {
     if (valid) {
-        var msgClasses = "h3 text-center tada animated";
+        var msgClasses = "h3 text-center color-green tada animated";
     } else {
-        var msgClasses = "h3 text-center";
+        var msgClasses = "h3 text-center color-red";
     }
     $("#regisSubmit").removeClass().addClass(msgClasses).text(msg);
 }
 
 
 /* Login Form */
-$("#loginForm").validator().on("submit", function (event) {
+$("#loginForm").validator().on("submit", function(event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         lformError();
@@ -246,11 +246,11 @@ function lsubmitForm() {
         type: "POST",
         url: js_base_url('login'),
         data: "c_email=" + email + "&c_pass=" + pass,
-        success: function (text) {
+        success: function(text) {
             if (text == "success") {
                 // console.log(text)
                 lformSuccess();
-                setTimeout(function () {
+                setTimeout(function() {
                     window.location.reload(1);
                 }, 3000);
             } else {
@@ -269,22 +269,22 @@ function lformSuccess() {
 }
 
 function lformError() {
-    $("#loginForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    $("#loginForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $(this).removeClass();
     });
 }
 
 function lsubmitMSG(valid, msg) {
     if (valid) {
-        var msgClasses = "h3 text-center tada animated";
+        var msgClasses = "h3 text-center color-green tada animated";
     } else {
-        var msgClasses = "h3 text-center";
+        var msgClasses = "h3 text-center color-red";
     }
     $("#loginSubmit").removeClass().addClass(msgClasses).text(msg);
 }
 
 /* Request Form */
-$("#requestForm").validator().on("submit", function (event) {
+$("#requestForm").validator().on("submit", function(event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         rqformError();
@@ -307,7 +307,7 @@ function rqsubmitForm() {
         type: "POST",
         url: js_base_url('home/request'),
         data: "title=" + title + "&fullname=" + name + "&email=" + email + "&phone=" + phone + "&datetime=" + datetime,
-        success: function (text) {
+        success: function(text) {
             if (text == "success") {
                 // console.log(text)
                 rqformSuccess();
@@ -327,22 +327,22 @@ function rqformSuccess() {
 }
 
 function rqformError() {
-    $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $(this).removeClass();
     });
 }
 
 function rqsubmitMSG(valid, msg) {
     if (valid) {
-        var msgClasses = "h3 text-center tada animated";
+        var msgClasses = "h3 text-center color-green tada animated";
     } else {
-        var msgClasses = "h3 text-center";
+        var msgClasses = "h3 text-center color-red";
     }
     $("#rmsgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
 
 /* Privacy Form */
-$("#privacyForm").validator().on("submit", function (event) {
+$("#privacyForm").validator().on("submit", function(event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         pformError();
@@ -365,7 +365,7 @@ function psubmitForm() {
         type: "POST",
         url: "php/privacyform-process.php",
         data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms,
-        success: function (text) {
+        success: function(text) {
             if (text == "success") {
                 pformSuccess();
             } else {
@@ -383,16 +383,16 @@ function pformSuccess() {
 }
 
 function pformError() {
-    $("#privacyForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    $("#privacyForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $(this).removeClass();
     });
 }
 
 function psubmitMSG(valid, msg) {
     if (valid) {
-        var msgClasses = "h3 text-center tada animated";
+        var msgClasses = "h3 text-center tada animated color-green";
     } else {
-        var msgClasses = "h3 text-center";
+        var msgClasses = "h3 text-center color-red";
     }
     $("#pmsgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
@@ -402,7 +402,7 @@ function psubmitMSG(valid, msg) {
 // create the back to top button
 $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
 var amountScrolled = 700;
-$(window).scroll(function () {
+$(window).scroll(function() {
     if ($(window).scrollTop() > amountScrolled) {
         $('a.back-to-top').fadeIn('500');
     } else {
@@ -412,8 +412,6 @@ $(window).scroll(function () {
 
 
 /* Removes Long Focus On Buttons */
-$(".button, a, button").mouseup(function () {
+$(".button, a, button").mouseup(function() {
     $(this).blur();
 });
-
-

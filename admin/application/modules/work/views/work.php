@@ -103,8 +103,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</div>
 </div>
 <script>
-	function commitMSG(msg) {
-		$("#commitSubmit").text(msg);
+	function commitMSG(valid, msg) {
+		if (valid) {
+			addClass = "color-green";
+		} else {
+			addClass = "color-red";
+		}
+		$("#commitSubmit").text(msg).addClass(addClass);
 	}
 
 	function commitFrom(id, id_input) {
@@ -119,12 +124,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			encode: true,
 			success: function(text) {
 				if (text.success) {
-					commitMSG(text.success);
+					commitMSG(true, text.success);
 					setTimeout(function() {
 						window.location.reload(1);
 					}, 1000);
 				} else {
-					commitMSG(text.error);
+					commitMSG(false, text.error);
 				}
 			}
 		});
@@ -139,35 +144,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			encode: true,
 			success: function(text) {
 				if (text.success) {
-					commitMSG(text.success);
+					commitMSG(true, text.success);
 					setTimeout(function() {
 						window.location.reload(1);
 					}, 1000);
 				} else {
-					commitMSG(text.error);
+					commitMSG(false, text.error);
 				}
 			}
 		});
 	}
 
 	function delWork(id) {
-		$.ajax({
-			type: "POST",
-			url: js_base_url('work/delwork'),
-			data: "id=" + id,
-			dataType: 'json',
-			encode: true,
-			success: function(text) {
-				if (text.success) {
-					commitMSG(text.success);
-					setTimeout(function() {
-						window.location.reload(1);
-					}, 1000);
-				} else {
-					commitMSG(text.error);
+		confirm = confirm('คุณต้องการจะยกเลิกชิ้นงานนี้ใช่หรือไม่')
+		if (confirm) {
+			$.ajax({
+				type: "POST",
+				url: js_base_url('work/delwork'),
+				data: "id=" + id,
+				dataType: 'json',
+				encode: true,
+				success: function(text) {
+					if (text.success) {
+						commitMSG(true, text.success);
+						setTimeout(function() {
+							window.location.reload(1);
+						}, 1000);
+					} else {
+						commitMSG(false, text.error);
+					}
 				}
-			}
-		});
+			});
+		}
+
 	}
 
 	function detailFrom(id) {
@@ -194,9 +203,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			encode: true,
 			success: function(text) {
 				if (text.success) {
-					$("#detailSubmit").text(text.success);
+					$("#detailSubmit").text(text.success).addClass('color-green');
 				} else {
-					$("#detailSubmit").text(text.error);
+					$("#detailSubmit").text(text.error).addClass('color-red');
 				}
 			}
 		});
@@ -206,17 +215,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		$.ajax({
 			type: "POST",
 			url: js_base_url('work/success'),
-			data: "id=" + id ,
+			data: "id=" + id,
 			dataType: 'json',
 			encode: true,
 			success: function(text) {
 				if (text.success) {
-					commitMSG(text.success);
+					commitMSG(true, text.success);
 					setTimeout(function() {
 						window.location.reload(1);
 					}, 1000);
 				} else {
-					commitMSG(text.error);
+					commitMSG(false, text.error);
 				}
 			}
 		});

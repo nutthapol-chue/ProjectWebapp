@@ -48,6 +48,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="<?= base_url('assets/js/pages/dashboards/dashboard1.js'); ?>"></script>
 	<script src="<?= base_url('assets/js/custom.js'); ?>"></script>
 	<script src="<?= base_url('assets/js/ajex.js'); ?>"></script>
+	<style>
+		.color-green {
+			color: rgb(14, 184, 20);
+		}
+
+		.color-red {
+			color: rgb(214, 12, 12);
+		}
+	</style>
 </head>
 
 <body>

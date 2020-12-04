@@ -24,7 +24,7 @@ class Login extends MX_Controller
 	{
 		parent::__construct();
 		if (!empty($this->session->userdata('admin_account'))) {
-			redirect(base_url('home'));
+			redirect(base_url(''));
 		}
 	}
 	public function index()

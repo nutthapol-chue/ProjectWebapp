@@ -96,10 +96,10 @@ $db['default'] = array(
 );
 $db['test'] = array(
 	'dsn'	=> '',
-	'hostname' => '35.197.140.108',
-	'username' => 'admin_nutthapol',
-	'password' => 'P@ssw0rd',
-	'database' => 'admin_2-4project',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'project',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

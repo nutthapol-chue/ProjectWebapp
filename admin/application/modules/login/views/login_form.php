@@ -26,6 +26,15 @@
 	<script src="<?= base_url('assets/js/validator.js'); ?>"></script>
 	<!--Custom JavaScript -->
 	<script src="<?= base_url('assets/js/ajex.js'); ?>"></script>
+	<style>
+		.color-green {
+			color: rgb(14, 184, 20);
+		}
+
+		.color-red {
+			color: rgb(214, 12, 12);
+		}
+	</style>
 </head>
 
 <body style="background-color: #EEF5F9;">
@@ -50,7 +59,7 @@
 								<input type="password" class="form-control" name="a_pass" id="a_pass" required>
 							</div>
 							<div class="form-group">
-								<small id="loginSubmit" class="form-text" style="color:red;"></small>
+								<small id="loginSubmit" class="form-text" ></small>
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary btn-block">Login</button>
@@ -96,7 +105,7 @@
 							window.location.reload(1);
 						}, 1000);
 					} else {
-						lsubmitMSG(text.error);
+						lsubmitMSG(false,text.error);
 					}
 				}
 			});
@@ -105,12 +114,17 @@
 
 		function lformSuccess() {
 			$("#loginForm")[0].reset();
-			lsubmitMSG("เข้าสู่ระบบสำเร็จ !");
+			lsubmitMSG(true,"เข้าสู่ระบบสำเร็จ !");
 			$("input").removeClass('notEmpty'); // resets the field label after submission
 		}
 
-		function lsubmitMSG(msg) {
-			$("#loginSubmit").text(msg);
+		function lsubmitMSG(valid,msg) {
+			if(valid){
+				addClass = "color-green";
+			}else{
+				addClass = "color-red";
+			}
+			$("#loginSubmit").text(msg).addClass(addClass);
 		}
 	</script>
 
